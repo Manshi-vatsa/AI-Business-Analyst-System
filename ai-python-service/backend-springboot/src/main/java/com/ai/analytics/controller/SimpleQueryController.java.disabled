@@ -1,0 +1,104 @@
+package com.ai.analytics.controller;
+
+import org.springframework.http.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.ai.analytics.service.DashboardService;
+import com.ai.analytics.model.DashboardData;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api")
+@CrossOrigin(origins = "*")
+public class SimpleQueryController {
+    
+    private final RestTemplate restTemplate;
+    private final DashboardService dashboardService;
+    
+    @Autowired
+    public SimpleQueryController(RestTemplate restTemplate, DashboardService dashboardService) {
+        this.restTemplate = restTemplate;
+        this.dashboardService = dashboardService;
+    }
+    
+    // POST /api/query - Process natural language queries by calling Python API
+    @PostMapping("/query")
+    public ResponseEntity<Map<String, Object>> processQuery(@RequestBody Map<String, String> request) {
+        String question = request.get("question");
+        
+        if (question == null || question.trim().isEmpty()) {
+            Map<String, Object> errorResponse = new HashMap<>();
+            errorResponse.put("status", "error");
+            errorResponse.put("message", "Question is required");
+            return ResponseEntity.badRequest().body(errorResponse);
+        }
+        
+        try {
+            // Prepare request to Python API
+            String pythonApiUrl = "http://localhost:8000/ai/query";
+            
+            // Create request body for Python API
+            Map<String, String> pythonRequest = new HashMap<>();
+            pythonRequest.put("question", question);
+            
+            // Set headers
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            
+            // Create HTTP entity
+            HttpEntity<Map<String, String>> entity = new HttpEntity<>(pythonRequest, headers);
+            
+            // Call Python API
+            ResponseEntity<Object> pythonResponse = restTemplate.postForEntity(pythonApiUrl, entity, Object.class);
+            
+            if (pythonResponse.getStatusCode() == HttpStatus.OK) {
+                // Return the response from Python API
+                Object responseBody = pythonResponse.getBody();
+                if (responseBody instanceof Map) {
+                    Map<String, Object> successResponse = new HashMap<>();
+                    successResponse.put("status", "success");
+                    successResponse.put("data", responseBody);
+                    successResponse.put("message", "Query processed successfully");
+                    return ResponseEntity.ok(successResponse);
+                } else {
+                    Map<String, Object> errorResponse = new HashMap<>();
+                    errorResponse.put("status", "error");
+                    errorResponse.put("message", "Invalid response format from Python API");
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+                }
+            } else {
+                Map<String, Object> errorResponse = new HashMap<>();
+                errorResponse.put("status", "error");
+                errorResponse.put("message", "Python API call failed with status: " + pythonResponse.getStatusCode());
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+            }
+            
+        } catch (Exception e) {
+            Map<String, Object> errorResponse = new HashMap<>();
+            errorResponse.put("status", "error");
+            errorResponse.put("message", "Internal server error: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+        }
+    }
+    
+    // GET /api/dashboard - Get analytics dashboard data
+    @GetMapping("/dashboard")
+    public ResponseEntity<Map<String, Object>> getDashboardData() {
+        try {
+            DashboardData dashboardData = dashboardService.getDashboardData();
+            Map<String, Object> response = new HashMap<>();
+            response.put("status", "success");
+            response.put("data", dashboardData);
+            response.put("message", "Dashboard data retrieved successfully");
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            Map<String, Object> errorResponse = new HashMap<>();
+            errorResponse.put("status", "error");
+            errorResponse.put("message", "Failed to retrieve dashboard data: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@echo off
+set JAVA_HOME=C:\Program Files\Java\jdk-17
+set PATH=%JAVA_HOME%\bin;%PATH%
+echo Setting up Maven environment...
+echo Downloading Maven...
+curl -o maven.zip https://archive.apache.org/dist/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.zip
+echo Extracting Maven...
+powershell -Command "Expand-Archive -Path maven.zip -DestinationPath ."
+set MAVEN_HOME=%cd%\apache-maven-3.9.4
+set PATH=%MAVEN_HOME%\bin;%PATH%
+echo Maven setup complete
+echo Building and running application...
+mvn clean spring-boot:run

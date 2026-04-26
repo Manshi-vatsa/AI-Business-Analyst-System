@@ -1,0 +1,329 @@
+2026-04-24 19:30:48,386 - ai_analytics.main - ERROR - general_exception_handler:332 - Unhandled exception: 1 validation error for HealthResponse
+message
+  Field required [type=missing, input_value={'status': 'healthy', 'se...siness Analyst Service'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+2026-04-24 19:31:23,901 - ai_analytics.main - ERROR - get_insights:157 - Error fetching insights from database: name 'DataAgent' is not defined
+Traceback (most recent call last):
+  File "D:\AI_Business_Analyst_System\ai-python-service\main.py", line 129, in get_insights
+    data_agent = DataAgent()
+                 ^^^^^^^^^
+NameError: name 'DataAgent' is not defined
+2026-04-24 19:31:23,903 - ai_analytics.main - ERROR - general_exception_handler:333 - Unhandled exception: create
+2026-04-24 19:32:28,279 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-24 19:32:28,279 - ai_analytics.main - ERROR - get_insights:159 - Error fetching insights from database: Database connection failed: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+Traceback (most recent call last):
+  File "D:\AI_Business_Analyst_System\ai-python-service\agents\data_agent.py", line 25, in connect_to_mysql
+    connection = mysql.connector.connect(**self.db_config)
+  File "C:\Users\MANSHI VATSA\AppData\Roaming\Python\Python314\site-packages\mysql\connector\pooling.py", line 323, in connect
+    return MySQLConnection(*args, **kwargs)
+  File "C:\Users\MANSHI VATSA\AppData\Roaming\Python\Python314\site-packages\mysql\connector\connection.py", line 185, in __init__
+    self.connect(**kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\MANSHI VATSA\AppData\Roaming\Python\Python314\site-packages\mysql\connector\abstracts.py", line 1604, in connect
+    self._open_connection()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MANSHI VATSA\AppData\Roaming\Python\Python314\site-packages\mysql\connector\connection.py", line 411, in _open_connection
+    raise err
+  File "C:\Users\MANSHI VATSA\AppData\Roaming\Python\Python314\site-packages\mysql\connector\connection.py", line 388, in _open_connection
+    self._do_auth(
+    ~~~~~~~~~~~~~^
+        self._user,
+        ^^^^^^^^^^^
+    ...<4 lines>...
+        self._conn_attrs,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\MANSHI VATSA\AppData\Roaming\Python\Python314\site-packages\mysql\connector\connection.py", line 320, in _do_auth
+    ok_pkt = self._authenticator.authenticate(
+        sock=self._socket,
+    ...<10 lines>...
+        conn_attrs=conn_attrs,
+    )
+  File "C:\Users\MANSHI VATSA\AppData\Roaming\Python\Python314\site-packages\mysql\connector\authentication.py", line 381, in authenticate
+    ok_pkt = self._handle_server_response(sock, pkt)
+  File "C:\Users\MANSHI VATSA\AppData\Roaming\Python\Python314\site-packages\mysql\connector\authentication.py", line 287, in _handle_server_response
+    raise get_exception(pkt)
+mysql.connector.errors.ProgrammingError: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\AI_Business_Analyst_System\ai-python-service\main.py", line 132, in get_insights
+    insights_data = data_agent.execute_query(fetch_insights_query)
+  File "D:\AI_Business_Analyst_System\ai-python-service\agents\data_agent.py", line 126, in execute_query
+    connection = self.connect_to_mysql()
+  File "D:\AI_Business_Analyst_System\ai-python-service\agents\data_agent.py", line 30, in connect_to_mysql
+    raise Exception(f"Database connection failed: {e}")
+Exception: Database connection failed: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-24 19:32:28,340 - ai_analytics.main - ERROR - general_exception_handler:335 - Unhandled exception: 'dict' object is not callable
+2026-04-24 19:32:30,545 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-24 19:32:30,545 - agents.data_agent - ERROR - get_data:160 - Error in get_data: Database connection failed: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 12:41:45,825 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 12:41:50,622 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 12:41:55,750 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 12:47:04,107 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 12:50:55,340 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 12:51:08,574 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:00:46,961 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:00:49,017 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:01:49,184 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:01:49,204 - services.agent_pipeline - ERROR - process_query:138 - Pipeline error: name 'pd' is not defined
+Traceback (most recent call last):
+  File "D:\AI_Business_Analyst_System\ai-python-service\services\agent_pipeline.py", line 99, in process_query
+    df = pd.DataFrame(data)
+         ^^
+NameError: name 'pd' is not defined
+2026-04-25 13:02:03,713 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:02:03,755 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:02:03,764 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:02:03,774 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:02:03,783 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:09:39,933 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:09:39,963 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:09:39,970 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:09:39,978 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:09:39,986 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:09:43,330 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:38:40,797 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:38:48,083 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:38:52,049 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:39:04,071 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:39:04,103 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:39:04,113 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:39:04,120 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:39:04,130 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:40:44,068 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:44:21,222 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:44:23,286 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:44:27,403 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:44:27,440 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:44:27,450 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:44:27,459 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:44:27,468 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:48:43,310 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:48:43,341 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:48:43,350 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:48:43,360 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:48:43,368 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:48:45,439 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:13,494 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:13,538 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:13,547 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:13,555 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:13,563 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:15,619 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:15,652 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:15,660 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:15,669 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:15,677 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:17,752 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:17,787 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:17,795 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:17,803 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:17,811 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:19,899 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:19,929 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:19,936 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:19,945 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:19,953 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:49:29,068 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:50:15,862 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:50:24,588 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:50:29,501 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:50:29,536 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:50:29,544 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:50:29,553 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:50:29,560 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:50:31,994 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:50:39,723 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:51:08,522 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 13:52:02,033 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:02:29,182 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:02:29,334 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:02:29,417 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:02:29,499 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:02:29,520 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:02:29,542 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:02:29,568 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:07:42,293 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:07:42,390 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:07:42,414 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:07:42,439 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:07:42,460 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:07:45,480 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:07:45,568 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:07:45,591 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:07:45,615 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:07:45,639 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:07:47,811 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:14:32,638 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:14:32,723 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:14:32,743 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:14:32,764 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:14:32,784 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:14:35,194 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:18:34,239 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:18:34,322 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:18:34,345 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:18:34,369 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:18:34,389 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 17:18:36,594 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 19:09:51,644 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 19:09:59,102 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 19:09:59,133 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 19:09:59,142 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 19:09:59,150 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 19:09:59,159 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 19:10:03,944 - agents.data_agent - ERROR - connect_to_mysql:29 - Error connecting to MySQL: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2026-04-25 19:16:50,171 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1054 (42S22): Unknown column 'sale_date' in 'order clause'
+2026-04-25 19:16:50,173 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: SELECT * FROM sales ORDER BY sale_date DESC LIMIT 100
+2026-04-25 19:16:56,254 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1054 (42S22): Unknown column 'sale_date' in 'order clause'
+2026-04-25 19:16:56,256 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: SELECT * FROM sales ORDER BY sale_date DESC LIMIT 100
+2026-04-25 19:16:56,298 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s, NOW())' at line 2
+2026-04-25 19:16:56,299 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: 
+                    INSERT INTO insights (insight_type, message, value, category, created_at) 
+                    VALUES (%s, %s, %s, %s, NOW())
+                
+2026-04-25 19:16:56,311 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s, NOW())' at line 2
+2026-04-25 19:16:56,312 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: 
+                    INSERT INTO insights (insight_type, message, value, category, created_at) 
+                    VALUES (%s, %s, %s, %s, NOW())
+                
+2026-04-25 19:16:56,325 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s, NOW())' at line 2
+2026-04-25 19:16:56,326 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: 
+                    INSERT INTO insights (insight_type, message, value, category, created_at) 
+                    VALUES (%s, %s, %s, %s, NOW())
+                
+2026-04-25 19:16:56,339 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s, NOW())' at line 2
+2026-04-25 19:16:56,340 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: 
+                    INSERT INTO insights (insight_type, message, value, category, created_at) 
+                    VALUES (%s, %s, %s, %s, NOW())
+                
+2026-04-25 19:18:08,052 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1054 (42S22): Unknown column 'sale_date' in 'order clause'
+2026-04-25 19:18:08,053 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: SELECT * FROM sales ORDER BY sale_date DESC LIMIT 100
+2026-04-25 19:22:49,342 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1054 (42S22): Unknown column 'sale_date' in 'order clause'
+2026-04-25 19:22:49,342 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: SELECT * FROM sales ORDER BY sale_date DESC LIMIT 100
+2026-04-25 19:23:08,347 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1054 (42S22): Unknown column 'sale_date' in 'order clause'
+2026-04-25 19:23:08,348 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: SELECT * FROM sales ORDER BY sale_date DESC LIMIT 100
+2026-04-25 19:23:08,389 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s, NOW())' at line 2
+2026-04-25 19:23:08,391 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: 
+                    INSERT INTO insights (insight_type, message, value, category, created_at) 
+                    VALUES (%s, %s, %s, %s, NOW())
+                
+2026-04-25 19:23:08,403 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s, NOW())' at line 2
+2026-04-25 19:23:08,404 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: 
+                    INSERT INTO insights (insight_type, message, value, category, created_at) 
+                    VALUES (%s, %s, %s, %s, NOW())
+                
+2026-04-25 19:23:08,415 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s, NOW())' at line 2
+2026-04-25 19:23:08,416 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: 
+                    INSERT INTO insights (insight_type, message, value, category, created_at) 
+                    VALUES (%s, %s, %s, %s, NOW())
+                
+2026-04-25 19:23:08,428 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s, NOW())' at line 2
+2026-04-25 19:23:08,428 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: 
+                    INSERT INTO insights (insight_type, message, value, category, created_at) 
+                    VALUES (%s, %s, %s, %s, NOW())
+                
+2026-04-26 16:07:50,952 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1054 (42S22): Unknown column 'sale_date' in 'order clause'
+2026-04-26 16:07:50,953 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: SELECT * FROM sales ORDER BY sale_date DESC LIMIT 100
+2026-04-26 16:07:51,042 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s, NOW())' at line 2
+2026-04-26 16:07:51,043 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: 
+                    INSERT INTO insights (insight_type, message, value, category, created_at) 
+                    VALUES (%s, %s, %s, %s, NOW())
+                
+2026-04-26 16:07:51,057 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s, NOW())' at line 2
+2026-04-26 16:07:51,057 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: 
+                    INSERT INTO insights (insight_type, message, value, category, created_at) 
+                    VALUES (%s, %s, %s, %s, NOW())
+                
+2026-04-26 16:07:51,069 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s, NOW())' at line 2
+2026-04-26 16:07:51,070 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: 
+                    INSERT INTO insights (insight_type, message, value, category, created_at) 
+                    VALUES (%s, %s, %s, %s, NOW())
+                
+2026-04-26 16:07:51,083 - agents.data_agent - ERROR - execute_query:156 - Error executing query: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s, NOW())' at line 2
+2026-04-26 16:07:51,084 - agents.data_agent - ERROR - execute_query:157 - Failed SQL: 
+                    INSERT INTO insights (insight_type, message, value, category, created_at) 
+                    VALUES (%s, %s, %s, %s, NOW())
+                
+2026-04-26 16:13:43,144 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 16:13:43,145 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 16:13:43,156 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 16:23:19,746 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 16:23:19,747 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 16:23:25,119 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 16:23:25,121 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 16:23:25,135 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 16:23:27,277 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 16:23:27,277 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 16:23:27,285 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 16:23:29,430 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 16:23:29,431 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 16:39:19,299 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 16:39:19,300 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 16:39:19,311 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 16:52:53,932 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 16:52:53,933 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 16:52:59,866 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 16:52:59,867 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 16:52:59,883 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 16:53:03,574 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 16:53:03,575 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 16:53:03,583 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 18:23:54,655 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:23:54,659 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:23:54,698 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 18:23:57,671 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:23:57,674 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:24:05,508 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:24:05,510 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:24:05,536 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 18:24:16,365 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:24:16,367 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:24:23,204 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:24:23,207 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:24:23,230 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 18:24:28,204 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:24:28,207 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:24:28,236 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 18:55:27,822 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:55:27,825 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:55:34,460 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:55:34,462 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:55:34,497 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 18:55:37,399 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:55:37,402 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:55:37,420 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 18:55:46,823 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:55:46,826 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:55:46,845 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 18:55:50,240 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:55:50,244 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:55:50,265 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 18:56:05,118 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:56:05,120 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:56:05,144 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 18:58:06,704 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 18:58:06,707 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 18:58:06,728 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 19:03:48,547 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 19:03:48,550 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 19:04:03,209 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 19:04:03,210 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 19:04:03,234 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 19:04:06,193 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 19:04:06,196 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 19:04:06,216 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 19:05:01,601 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 19:05:01,603 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 19:05:01,623 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 19:15:21,994 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 19:15:21,996 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 19:15:22,019 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 19:15:35,251 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 19:15:35,254 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
+2026-04-26 19:15:35,283 - agents.analysis_agent - ERROR - detect_and_store_insights:461 - Error detecting insights: Can only use .dt accessor with datetimelike values
+2026-04-26 19:15:38,701 - agents.analysis_agent - ERROR - aggregate_dashboard_data:252 - 5. Missing required columns: ['quantity']
+2026-04-26 19:15:38,703 - agents.analysis_agent - ERROR - aggregate_dashboard_data:253 - 6. Available columns: ['id', 'product', 'region', 'revenue', 'date']
