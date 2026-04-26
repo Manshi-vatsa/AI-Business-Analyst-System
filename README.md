@@ -21,6 +21,14 @@ ai-python-service/
     ├── __init__.py
     └── connection.py     # MySQL database connection
 ```
+## Screenshots
+![AI_Alerts_Screens](screenshots/AI_Alerts_Screens.png)
+![AI_Chat](screenshots/AI_Chat.png)
+![AI_Insights_Screen](screenshots/AI_Insights_Screen.png)
+![insights_table](screenshots/insights_table.png)
+![Sales_Dashboard](screenshots/Sales_Dashboard.png)
+![Sales_table](screenshots/Sales_table.png)
+
 
 ## Features
 
