@@ -1,0 +1,16 @@
+2026-04-21 10:52:26.242 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 15676 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-21 10:52:26.261 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-21 10:52:29.787 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-21 10:52:29.789 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-21 10:52:29.789 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-21 10:52:29.865 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-21 10:52:30.561 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-21 10:52:30.803 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@283baa39
+2026-04-21 10:52:30.805 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-21 10:52:30.868 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-21 10:52:30.870 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-21 10:52:32.520 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-21 10:52:32.900 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-21 10:52:32.930 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 9.025 seconds (process running for 10.235)
+2026-04-21 10:54:17.775 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-21 10:54:17.782 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.

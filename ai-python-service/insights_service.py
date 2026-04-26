@@ -4,7 +4,7 @@ from db_service import db_service
 
 logger = logging.getLogger(__name__)
 
-class InsightsService:
+class InsightService:
     """
     Service for generating automatic insights from sales data
     """
@@ -165,4 +165,4 @@ class InsightsService:
             return False
 
 # Global insights service instance
-insights_service = InsightsService()
+insights_service = InsightService()

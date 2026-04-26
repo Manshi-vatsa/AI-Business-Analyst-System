@@ -1,340 +1,37 @@
-2026-04-19 19:22:24.072 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 7596 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 19:22:24.075 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 19:22:28.721 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-19 19:22:28.727 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-19 19:22:28.727 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-04-19 19:22:28.936 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-04-19 19:22:29.087 [main] ERROR com.zaxxer.hikari.HikariConfig - ai-analytics-pool - dataSource or dataSourceClassName or jdbcUrl is required.
-2026-04-19 19:22:29.096 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/ai/analytics/config/DatabaseConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: dataSource or dataSourceClassName or jdbcUrl is required.
-2026-04-19 19:22:29.103 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2026-04-19 19:22:29.181 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/ai/analytics/config/DatabaseConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: dataSource or dataSourceClassName or jdbcUrl is required.
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/ai/analytics/config/DatabaseConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: dataSource or dataSourceClassName or jdbcUrl is required.
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: dataSource or dataSourceClassName or jdbcUrl is required.
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
-	... 35 common frames omitted
-Caused by: java.lang.IllegalArgumentException: dataSource or dataSourceClassName or jdbcUrl is required.
-	at com.zaxxer.hikari.HikariConfig.validate(HikariConfig.java:1026)
-	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:77)
-	at com.ai.analytics.config.DatabaseConfig.dataSource(DatabaseConfig.java:37)
-	at com.ai.analytics.config.DatabaseConfig$$SpringCGLIB$$0.CGLIB$dataSource$2(<generated>)
-	at com.ai.analytics.config.DatabaseConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
-	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
-	at com.ai.analytics.config.DatabaseConfig$$SpringCGLIB$$0.dataSource(<generated>)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
-	... 36 common frames omitted
-2026-04-19 20:17:48.306 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 17.0.12 with PID 22824 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 20:17:48.310 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 20:17:48.785 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
-2026-04-19 20:17:48.811 [main] ERROR o.s.boot.SpringApplication - Application run failed
-java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:428)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ai.analytics.config.DatabaseConfig] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2a139a55]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
-	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360)
-	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750)
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1676)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 17 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: org/springframework/transaction/PlatformTransactionManager
-	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
-	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
-	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
-	... 33 common frames omitted
-Caused by: java.lang.ClassNotFoundException: org.springframework.transaction.PlatformTransactionManager
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
-	... 37 common frames omitted
-2026-04-19 20:19:52.172 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 17.0.12 with PID 20424 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 20:19:52.174 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 20:19:53.502 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-19 20:19:53.506 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-19 20:19:53.506 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-04-19 20:19:53.588 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-04-19 20:19:53.637 [main] ERROR com.zaxxer.hikari.HikariConfig - ai-analytics-pool - dataSource or dataSourceClassName or jdbcUrl is required.
-2026-04-19 20:19:53.639 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/ai/analytics/config/DatabaseConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: dataSource or dataSourceClassName or jdbcUrl is required.
-2026-04-19 20:19:53.641 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2026-04-19 20:19:53.672 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/ai/analytics/config/DatabaseConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: dataSource or dataSourceClassName or jdbcUrl is required.
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/ai/analytics/config/DatabaseConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: dataSource or dataSourceClassName or jdbcUrl is required.
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: dataSource or dataSourceClassName or jdbcUrl is required.
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
-	... 35 common frames omitted
-Caused by: java.lang.IllegalArgumentException: dataSource or dataSourceClassName or jdbcUrl is required.
-	at com.zaxxer.hikari.HikariConfig.validate(HikariConfig.java:1026)
-	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:77)
-	at com.ai.analytics.config.DatabaseConfig.dataSource(DatabaseConfig.java:37)
-	at com.ai.analytics.config.DatabaseConfig$$SpringCGLIB$$0.CGLIB$dataSource$2(<generated>)
-	at com.ai.analytics.config.DatabaseConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
-	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
-	at com.ai.analytics.config.DatabaseConfig$$SpringCGLIB$$0.dataSource(<generated>)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
-	... 36 common frames omitted
-2026-04-19 20:20:41.672 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 17.0.12 with PID 400 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 20:20:41.674 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 20:20:42.783 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-19 20:20:42.785 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-19 20:20:42.786 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-04-19 20:20:42.858 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-04-19 20:20:42.904 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
-2026-04-19 20:20:43.069 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@296edc75
-2026-04-19 20:20:43.071 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
-2026-04-19 20:20:43.231 [main] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Caching was explicitly requested, but no RegionFactory was defined and there is not a single registered RegionFactory
-2026-04-19 20:20:43.232 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [com/ai/analytics/config/DatabaseConfig.class]: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Caching was explicitly requested, but no RegionFactory was defined and there is not a single registered RegionFactory
-2026-04-19 20:20:43.233 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
-2026-04-19 20:20:43.243 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
-2026-04-19 20:20:43.245 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2026-04-19 20:20:43.265 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [com/ai/analytics/config/DatabaseConfig.class]: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Caching was explicitly requested, but no RegionFactory was defined and there is not a single registered RegionFactory
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
-Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Caching was explicitly requested, but no RegionFactory was defined and there is not a single registered RegionFactory
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
-	at org.hibernate.boot.internal.MetadataBuilderImpl$MetadataBuildingOptionsImpl.<init>(MetadataBuilderImpl.java:705)
-	at org.hibernate.boot.internal.MetadataBuilderImpl.<init>(MetadataBuilderImpl.java:139)
-	at org.hibernate.boot.MetadataSources.getMetadataBuilder(MetadataSources.java:164)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:277)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:198)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:63)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
-	... 16 common frames omitted
-Caused by: org.hibernate.cache.CacheException: Caching was explicitly requested, but no RegionFactory was defined and there is not a single registered RegionFactory
-	at org.hibernate.cache.internal.RegionFactoryInitiator.resolveRegionFactory(RegionFactoryInitiator.java:92)
-	at org.hibernate.cache.internal.RegionFactoryInitiator.initiateService(RegionFactoryInitiator.java:47)
-	at org.hibernate.cache.internal.RegionFactoryInitiator.initiateService(RegionFactoryInitiator.java:32)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	... 30 common frames omitted
-2026-04-19 20:21:12.014 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 17.0.12 with PID 2404 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 20:21:12.016 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 20:21:13.093 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-19 20:21:13.095 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-19 20:21:13.096 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-04-19 20:21:13.164 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-04-19 20:21:13.207 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
-2026-04-19 20:21:13.339 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@64021427
-2026-04-19 20:21:13.340 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
-2026-04-19 20:21:13.810 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-19 20:21:13.811 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2026-04-19 20:21:14.261 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'salesController' defined in file [D:\AI_Business_Analyst_System\backend-springboot\target\classes\com\ai\analytics\controller\SalesController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'salesService' defined in file [D:\AI_Business_Analyst_System\backend-springboot\target\classes\com\ai\analytics\service\SalesService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'salesRepository' defined in com.ai.analytics.repository.SalesRepository defined in @EnableJpaRepositories declared on DatabaseConfig: Not a managed type: class com.ai.analytics.entity.Sales
-2026-04-19 20:21:14.263 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
-2026-04-19 20:21:14.268 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
-2026-04-19 20:21:14.269 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2026-04-19 20:21:14.290 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'salesController' defined in file [D:\AI_Business_Analyst_System\backend-springboot\target\classes\com\ai\analytics\controller\SalesController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'salesService' defined in file [D:\AI_Business_Analyst_System\backend-springboot\target\classes\com\ai\analytics\service\SalesService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'salesRepository' defined in com.ai.analytics.repository.SalesRepository defined in @EnableJpaRepositories declared on DatabaseConfig: Not a managed type: class com.ai.analytics.entity.Sales
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'salesService' defined in file [D:\AI_Business_Analyst_System\backend-springboot\target\classes\com\ai\analytics\service\SalesService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'salesRepository' defined in com.ai.analytics.repository.SalesRepository defined in @EnableJpaRepositories declared on DatabaseConfig: Not a managed type: class com.ai.analytics.entity.Sales
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
-	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'salesRepository' defined in com.ai.analytics.repository.SalesRepository defined in @EnableJpaRepositories declared on DatabaseConfig: Not a managed type: class com.ai.analytics.entity.Sales
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
-	... 33 common frames omitted
-Caused by: java.lang.IllegalArgumentException: Not a managed type: class com.ai.analytics.entity.Sales
-	at org.hibernate.metamodel.model.domain.internal.JpaMetamodelImpl.managedType(JpaMetamodelImpl.java:193)
-	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.managedType(MappingMetamodelImpl.java:468)
-	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.managedType(MappingMetamodelImpl.java:98)
-	at org.springframework.data.jpa.repository.support.JpaMetamodelEntityInformation.<init>(JpaMetamodelEntityInformation.java:82)
-	at org.springframework.data.jpa.repository.support.JpaEntityInformationSupport.getEntityInformation(JpaEntityInformationSupport.java:69)
-	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getEntityInformation(JpaRepositoryFactory.java:246)
-	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:211)
-	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:194)
-	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:1)
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:317)
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:279)
-	at org.springframework.data.util.Lazy.getNullable(Lazy.java:135)
-	at org.springframework.data.util.Lazy.get(Lazy.java:113)
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:285)
-	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
-	... 44 common frames omitted
-2026-04-19 20:22:40.678 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 17.0.12 with PID 23208 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 20:22:40.680 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 20:22:41.049 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'restTemplate' defined in class path resource [com/ai/analytics/config/SimpleDatabaseConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=simpleDatabaseConfig; factoryMethodName=restTemplate; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/ai/analytics/config/SimpleDatabaseConfig.class]] for bean 'restTemplate' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=appConfig; factoryMethodName=restTemplate; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/ai/analytics/config/AppConfig.class]] bound.
-2026-04-19 20:22:41.077 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+2026-04-26 15:40:03.221 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 24720 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 15:40:03.231 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 15:40:04.817 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 15:40:04.819 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 15:40:04.820 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 15:40:04.897 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 15:40:05.477 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 15:40:05.666 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@15f861ee
+2026-04-26 15:40:05.667 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 15:40:05.725 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 15:40:05.727 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 15:40:07.212 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 15:40:07.547 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 15:40:07.573 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 5.042 seconds (process running for 5.604)
+2026-04-26 15:49:25.069 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26 15:52:24.744 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 15:52:24.756 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 15:52:32.098 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 7092 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 15:52:32.101 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 15:52:33.490 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8000"]
+2026-04-26 15:52:33.493 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 15:52:33.494 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 15:52:33.577 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 15:52:34.161 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 15:52:34.321 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ff6804a
+2026-04-26 15:52:34.324 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 15:52:34.374 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 15:52:34.375 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 15:52:35.894 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 15:52:36.214 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8000"]
+2026-04-26 15:52:36.233 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-04-26 15:52:36.238 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 15:52:36.246 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 15:52:36.275 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
 
 ***************************
 APPLICATION FAILED TO START
@@ -342,348 +39,291 @@ APPLICATION FAILED TO START
 
 Description:
 
-The bean 'restTemplate', defined in class path resource [com/ai/analytics/config/SimpleDatabaseConfig.class], could not be registered. A bean with that name has already been defined in class path resource [com/ai/analytics/config/AppConfig.class] and overriding is disabled.
+Web server failed to start. Port 8000 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8000 or configure this application to listen on another port.
+
+2026-04-26 15:52:53.455 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 8736 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 15:52:53.457 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 15:52:54.897 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8000"]
+2026-04-26 15:52:54.900 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 15:52:54.900 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 15:52:54.975 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 15:52:55.465 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 15:52:55.614 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@618f627b
+2026-04-26 15:52:55.616 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 15:52:55.659 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 15:52:55.660 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 15:52:57.071 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 15:52:57.378 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8000"]
+2026-04-26 15:52:57.395 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-04-26 15:52:57.399 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 15:52:57.405 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 15:52:57.438 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8000 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8000 or configure this application to listen on another port.
+
+2026-04-26 15:54:21.995 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 5224 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 15:54:21.996 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 15:54:23.485 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8000"]
+2026-04-26 15:54:23.488 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 15:54:23.488 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 15:54:23.570 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 15:54:24.078 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 15:54:24.223 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@779228dc
+2026-04-26 15:54:24.226 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 15:54:24.264 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 15:54:24.266 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 15:54:25.740 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 15:54:26.045 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8000"]
+2026-04-26 15:54:26.063 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-04-26 15:54:26.067 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 15:54:26.074 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 15:54:26.098 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8000 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8000 or configure this application to listen on another port.
+
+2026-04-26 15:55:04.224 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 3464 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 15:55:04.227 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 15:55:05.554 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8000"]
+2026-04-26 15:55:05.557 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 15:55:05.557 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 15:55:05.632 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 15:55:06.112 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 15:55:06.257 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c030fe1
+2026-04-26 15:55:06.259 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 15:55:06.298 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 15:55:06.299 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 15:55:07.749 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 15:55:08.061 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8000"]
+2026-04-26 15:55:08.090 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 4.458 seconds (process running for 4.903)
+2026-04-26 16:00:28.503 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 16:00:28.509 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 16:01:15.502 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 15516 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 16:01:15.504 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 16:01:16.003 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'restTemplate' defined in class path resource [com/ai/analytics/config/RestTemplateConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=restTemplateConfig; factoryMethodName=restTemplate; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/ai/analytics/config/RestTemplateConfig.class]] for bean 'restTemplate' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=appConfig; factoryMethodName=restTemplate; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/ai/analytics/config/AppConfig.class]] bound.
+2026-04-26 16:01:16.034 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'restTemplate', defined in class path resource [com/ai/analytics/config/RestTemplateConfig.class], could not be registered. A bean with that name has already been defined in class path resource [com/ai/analytics/config/AppConfig.class] and overriding is disabled.
 
 Action:
 
 Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
 
-2026-04-19 20:23:17.987 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 17.0.12 with PID 26848 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 20:23:17.989 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 20:23:19.149 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-19 20:23:19.151 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-19 20:23:19.151 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-04-19 20:23:19.228 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-04-19 20:23:19.269 [main] ERROR com.zaxxer.hikari.HikariConfig - Failed to load driver class org.h2.Driver from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@2a139a55
-2026-04-19 20:23:19.271 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/ai/analytics/config/SimpleDatabaseConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: Failed to load driver class org.h2.Driver in either of HikariConfig class loader or Thread context classloader
-2026-04-19 20:23:19.274 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2026-04-19 20:23:19.299 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [com/ai/analytics/config/SimpleDatabaseConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: Failed to load driver class org.h2.Driver in either of HikariConfig class loader or Thread context classloader
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/ai/analytics/config/SimpleDatabaseConfig.class]: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: Failed to load driver class org.h2.Driver in either of HikariConfig class loader or Thread context classloader
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:485)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
-	... 21 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception with message: Failed to load driver class org.h2.Driver in either of HikariConfig class loader or Thread context classloader
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
-	... 35 common frames omitted
-Caused by: java.lang.RuntimeException: Failed to load driver class org.h2.Driver in either of HikariConfig class loader or Thread context classloader
-	at com.zaxxer.hikari.HikariConfig.setDriverClassName(HikariConfig.java:488)
-	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.set(DataSourceBuilder.java:479)
-	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperties.set(DataSourceBuilder.java:373)
-	at org.springframework.boot.jdbc.DataSourceBuilder.build(DataSourceBuilder.java:183)
-	at com.ai.analytics.config.SimpleDatabaseConfig.dataSource(SimpleDatabaseConfig.java:20)
-	at com.ai.analytics.config.SimpleDatabaseConfig$$SpringCGLIB$$0.CGLIB$dataSource$0(<generated>)
-	at com.ai.analytics.config.SimpleDatabaseConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
-	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
-	at com.ai.analytics.config.SimpleDatabaseConfig$$SpringCGLIB$$0.dataSource(<generated>)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
-	... 36 common frames omitted
-2026-04-19 20:23:53.190 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 17.0.12 with PID 6636 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 20:23:53.191 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 20:23:54.331 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-19 20:23:54.333 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-19 20:23:54.333 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-04-19 20:23:54.402 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-04-19 20:23:54.572 [main] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Caching was explicitly requested, but no RegionFactory was defined and there is not a single registered RegionFactory
-2026-04-19 20:23:54.573 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Caching was explicitly requested, but no RegionFactory was defined and there is not a single registered RegionFactory
-2026-04-19 20:23:54.574 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2026-04-19 20:23:54.599 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Caching was explicitly requested, but no RegionFactory was defined and there is not a single registered RegionFactory
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
-Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.cache.spi.RegionFactory] due to: Caching was explicitly requested, but no RegionFactory was defined and there is not a single registered RegionFactory
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
-	at org.hibernate.boot.internal.MetadataBuilderImpl$MetadataBuildingOptionsImpl.<init>(MetadataBuilderImpl.java:705)
-	at org.hibernate.boot.internal.MetadataBuilderImpl.<init>(MetadataBuilderImpl.java:139)
-	at org.hibernate.boot.MetadataSources.getMetadataBuilder(MetadataSources.java:164)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:277)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:198)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:63)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
-	... 16 common frames omitted
-Caused by: org.hibernate.cache.CacheException: Caching was explicitly requested, but no RegionFactory was defined and there is not a single registered RegionFactory
-	at org.hibernate.cache.internal.RegionFactoryInitiator.resolveRegionFactory(RegionFactoryInitiator.java:92)
-	at org.hibernate.cache.internal.RegionFactoryInitiator.initiateService(RegionFactoryInitiator.java:47)
-	at org.hibernate.cache.internal.RegionFactoryInitiator.initiateService(RegionFactoryInitiator.java:32)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	... 30 common frames omitted
-2026-04-19 20:24:25.491 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 17.0.12 with PID 18628 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 20:24:25.492 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 20:24:26.659 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-19 20:24:26.661 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-19 20:24:26.661 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-04-19 20:24:26.733 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-04-19 20:24:27.108 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-04-19 20:24:27.260 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2026-04-19 20:24:27.261 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-04-19 20:24:27.281 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-19 20:24:27.282 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2026-04-19 20:24:28.023 [main] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [sales]
-2026-04-19 20:24:28.024 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [sales]
-2026-04-19 20:24:28.025 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-04-19 20:24:28.026 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-04-19 20:24:28.029 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2026-04-19 20:24:28.049 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [sales]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
-Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [sales]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
-	... 16 common frames omitted
-Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [sales]
-	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:134)
-	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46)
-	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:97)
-	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:75)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:295)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145)
-	at java.base/java.util.HashMap.forEach(HashMap.java:1421)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142)
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
-	... 20 common frames omitted
-2026-04-19 20:25:05.117 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 17.0.12 with PID 25280 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 20:25:05.119 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 20:25:06.236 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-19 20:25:06.237 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-19 20:25:06.238 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-04-19 20:25:06.317 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-04-19 20:25:06.701 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-04-19 20:25:06.845 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2026-04-19 20:25:06.846 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-04-19 20:25:06.865 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-19 20:25:06.866 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2026-04-19 20:25:08.144 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-19 20:25:08.229 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'simpleQueryController' method 
-com.ai.analytics.controller.SimpleQueryController#getDashboardData()
-to {GET [/api/dashboard]}: There is already 'basicController' bean method
-com.ai.analytics.controller.BasicController#getDashboardData() mapped.
-2026-04-19 20:25:08.231 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-04-19 20:25:08.233 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-04-19 20:25:08.235 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2026-04-19 20:25:08.256 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'simpleQueryController' method 
-com.ai.analytics.controller.SimpleQueryController#getDashboardData()
-to {GET [/api/dashboard]}: There is already 'basicController' bean method
-com.ai.analytics.controller.BasicController#getDashboardData() mapped.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
-Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'simpleQueryController' method 
-com.ai.analytics.controller.SimpleQueryController#getDashboardData()
-to {GET [/api/dashboard]}: There is already 'basicController' bean method
-com.ai.analytics.controller.BasicController#getDashboardData() mapped.
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:674)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:636)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:508)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298)
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:239)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
-	... 16 common frames omitted
-2026-04-19 20:27:05.650 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 17.0.12 with PID 9256 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 20:27:05.653 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 20:27:06.806 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-19 20:27:06.809 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-19 20:27:06.809 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-04-19 20:27:06.877 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-04-19 20:27:07.257 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
-2026-04-19 20:27:07.388 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@77ff14ce
-2026-04-19 20:27:07.390 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
-2026-04-19 20:27:07.427 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-19 20:27:07.428 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2026-04-19 20:27:08.641 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-19 20:27:08.713 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'simpleQueryController' method 
-com.ai.analytics.controller.SimpleQueryController#processQuery(Map)
-to {POST [/api/query]}: There is already 'minimalController' bean method
-com.ai.analytics.controller.MinimalController#processQuery(Map) mapped.
-2026-04-19 20:27:08.715 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
-2026-04-19 20:27:08.722 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
-2026-04-19 20:27:08.723 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2026-04-19 20:27:08.744 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'simpleQueryController' method 
-com.ai.analytics.controller.SimpleQueryController#processQuery(Map)
-to {POST [/api/query]}: There is already 'minimalController' bean method
-com.ai.analytics.controller.MinimalController#processQuery(Map) mapped.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
-Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'simpleQueryController' method 
-com.ai.analytics.controller.SimpleQueryController#processQuery(Map)
-to {POST [/api/query]}: There is already 'minimalController' bean method
-com.ai.analytics.controller.MinimalController#processQuery(Map) mapped.
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:674)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:636)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:508)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298)
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:239)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
-	... 16 common frames omitted
-2026-04-19 21:29:17.597 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 17.0.12 with PID 13976 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 21:29:17.599 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 21:29:18.885 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-19 21:29:18.888 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-19 21:29:18.888 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-04-19 21:29:18.970 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-04-19 21:29:19.463 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
-2026-04-19 21:29:19.612 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@6caa4dc5
-2026-04-19 21:29:19.614 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
-2026-04-19 21:29:19.656 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-19 21:29:19.658 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2026-04-19 21:29:20.999 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-19 21:29:21.285 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-04-19 21:29:21.315 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 4.208 seconds (process running for 4.584)
-2026-04-19 21:29:31.948 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-04-19 22:18:14.088 [ai-analytics-pool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Thread starvation or clock leap detected (housekeeper delta=46m54s331ms439µs700ns).
-2026-04-19 22:22:13.011 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 10716 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 22:22:13.014 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 22:22:16.201 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-19 22:22:16.207 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-19 22:22:16.207 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-04-19 22:22:16.382 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-04-19 22:22:17.510 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
-2026-04-19 22:22:17.812 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@778c2e7c
-2026-04-19 22:22:17.816 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
-2026-04-19 22:22:17.922 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-19 22:22:17.924 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2026-04-19 22:22:21.141 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-19 22:22:21.799 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-04-19 22:22:21.838 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2026-04-19 22:22:21.846 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
-2026-04-19 22:22:21.860 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
-2026-04-19 22:22:21.911 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+2026-04-26 16:02:45.223 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 15976 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 16:02:45.225 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 16:02:45.963 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'restTemplate' defined in class path resource [com/ai/analytics/config/RestTemplateConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=restTemplateConfig; factoryMethodName=restTemplate; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/ai/analytics/config/RestTemplateConfig.class]] for bean 'restTemplate' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=appConfig; factoryMethodName=restTemplate; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/ai/analytics/config/AppConfig.class]] bound.
+2026-04-26 16:02:45.998 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'restTemplate', defined in class path resource [com/ai/analytics/config/RestTemplateConfig.class], could not be registered. A bean with that name has already been defined in class path resource [com/ai/analytics/config/AppConfig.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2026-04-26 16:06:58.472 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 13176 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 16:06:58.474 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 16:06:59.891 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:06:59.893 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 16:06:59.894 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 16:06:59.967 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 16:07:00.497 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 16:07:00.650 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@6df2af02
+2026-04-26 16:07:00.652 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 16:07:00.704 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 16:07:00.706 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 16:07:02.119 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 16:07:02.437 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:07:02.463 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 4.57 seconds (process running for 5.045)
+2026-04-26 16:07:44.083 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26 16:10:21.544 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 16:10:21.553 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 16:13:18.535 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 18848 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 16:13:18.537 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 16:13:19.933 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:13:19.935 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 16:13:19.935 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 16:13:20.015 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 16:13:20.577 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 16:13:20.728 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@69fe7090
+2026-04-26 16:13:20.730 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 16:13:20.770 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 16:13:20.771 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 16:13:22.281 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 16:13:22.600 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:13:22.627 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 4.713 seconds (process running for 5.215)
+2026-04-26 16:13:36.816 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26 16:15:12.383 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 16:15:12.389 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 16:22:33.982 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 23720 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 16:22:33.986 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 16:22:37.709 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:22:37.713 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 16:22:37.713 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 16:22:37.847 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 16:22:38.935 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 16:22:39.188 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@6df2af02
+2026-04-26 16:22:39.192 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 16:22:39.283 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 16:22:39.287 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 16:22:42.769 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 16:22:43.325 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:22:43.379 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 10.925 seconds (process running for 11.791)
+2026-04-26 16:23:19.557 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26 16:23:19.586 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - === SPRING BOOT DASHBOARD PROCESSING ===
+2026-04-26 16:23:19.587 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 1. Calling Python dashboard API: http://localhost:8000/ai/dashboard
+2026-04-26 16:23:19.790 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 2. Python dashboard response successful: {status=success, data={monthlySales=[{month=2024-01, revenue=75000.0}, {month=2024-02, revenue=82000.0}, {month=2024-03, revenue=68000.0}, {month=2024-04, revenue=91000.0}, {month=2024-05, revenue=78000.0}, {month=2024-06, revenue=85000.0}, {month=2024-07, revenue=92000.0}, {month=2024-08, revenue=88000.0}], regionSales=[{region=North, revenue=125000.0, percentage=35.0}, {region=South, revenue=89000.0, percentage=25.0}, {region=East, revenue=71000.0, percentage=20.0}, {region=West, revenue=71000.0, percentage=20.0}], productSales=[{product=Laptop, revenue=185000.0, quantity=185}, {product=Phone, revenue=125000.0, quantity=250}, {product=Tablet, revenue=56000.0, quantity=112}]}, message=Dashboard data retrieved successfully, timestamp=2026-04-26T16:22:23.689284}
+2026-04-26 16:23:25.063 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 16:23:25.063 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hi}
+2026-04-26 16:23:25.063 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hi
+2026-04-26 16:23:25.063 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 16:23:25.142 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T16:22:23.689284}
+2026-04-26 16:23:27.226 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 16:23:27.226 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hi}
+2026-04-26 16:23:27.226 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hi
+2026-04-26 16:23:27.226 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 16:23:27.290 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T16:22:23.689284}
+2026-04-26 16:23:29.404 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - === SPRING BOOT DASHBOARD PROCESSING ===
+2026-04-26 16:23:29.404 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 1. Calling Python dashboard API: http://localhost:8000/ai/dashboard
+2026-04-26 16:23:29.435 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 2. Python dashboard response successful: {status=success, data={monthlySales=[{month=2024-01, revenue=75000.0}, {month=2024-02, revenue=82000.0}, {month=2024-03, revenue=68000.0}, {month=2024-04, revenue=91000.0}, {month=2024-05, revenue=78000.0}, {month=2024-06, revenue=85000.0}, {month=2024-07, revenue=92000.0}, {month=2024-08, revenue=88000.0}], regionSales=[{region=North, revenue=125000.0, percentage=35.0}, {region=South, revenue=89000.0, percentage=25.0}, {region=East, revenue=71000.0, percentage=20.0}, {region=West, revenue=71000.0, percentage=20.0}], productSales=[{product=Laptop, revenue=185000.0, quantity=185}, {product=Phone, revenue=125000.0, quantity=250}, {product=Tablet, revenue=56000.0, quantity=112}]}, message=Dashboard data retrieved successfully, timestamp=2026-04-26T16:22:23.689284}
+2026-04-26 16:30:32.248 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 16:30:32.255 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 16:30:34.283 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 16360 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 16:30:34.285 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 16:30:35.626 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:30:35.629 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 16:30:35.629 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 16:30:35.706 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 16:30:36.232 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 16:30:36.389 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@779228dc
+2026-04-26 16:30:36.391 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 16:30:36.435 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 16:30:36.436 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 16:30:37.833 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 16:30:38.146 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:30:38.173 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 4.498 seconds (process running for 5.008)
+2026-04-26 16:32:04.421 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26 16:34:31.271 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 16:34:31.276 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 16:39:09.707 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 9964 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 16:39:09.710 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 16:39:11.038 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:39:11.040 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 16:39:11.040 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 16:39:11.111 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 16:39:11.588 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 16:39:11.743 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@504b8705
+2026-04-26 16:39:11.746 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 16:39:11.790 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 16:39:11.791 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 16:39:13.179 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 16:39:13.488 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:39:13.522 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 4.392 seconds (process running for 4.816)
+2026-04-26 16:39:19.146 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26 16:39:19.206 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 16:39:19.206 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=test}
+2026-04-26 16:39:19.206 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 2. Question extracted: test
+2026-04-26 16:39:19.206 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 16:39:19.330 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T16:39:01.089451}
+2026-04-26 16:44:57.558 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 16:44:57.570 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 16:44:59.758 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 20064 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 16:44:59.760 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 16:45:01.221 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:45:01.225 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 16:45:01.225 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 16:45:01.310 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 16:45:01.979 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 16:45:02.204 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@4813d0
+2026-04-26 16:45:02.206 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 16:45:02.260 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 16:45:02.263 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 16:45:04.541 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 16:45:04.908 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:45:04.941 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 5.855 seconds (process running for 6.388)
+2026-04-26 16:52:17.192 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 16:52:17.202 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 16:52:19.416 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 3828 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 16:52:19.419 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 16:52:20.875 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:52:20.878 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 16:52:20.879 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 16:52:20.957 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 16:52:21.518 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 16:52:21.671 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f0d8937
+2026-04-26 16:52:21.672 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 16:52:21.716 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 16:52:21.717 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 16:52:23.205 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 16:52:23.522 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 16:52:23.557 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 4.76 seconds (process running for 5.287)
+2026-04-26 16:52:51.542 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26 16:52:53.775 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - === SPRING BOOT DASHBOARD PROCESSING ===
+2026-04-26 16:52:53.775 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 1. Calling Python dashboard API: http://localhost:8000/ai/dashboard
+2026-04-26 16:52:53.965 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 2. Python dashboard response successful: {status=success, data={monthlySales=[{month=2024-01, revenue=75000.0}, {month=2024-02, revenue=82000.0}, {month=2024-03, revenue=68000.0}, {month=2024-04, revenue=91000.0}, {month=2024-05, revenue=78000.0}, {month=2024-06, revenue=85000.0}, {month=2024-07, revenue=92000.0}, {month=2024-08, revenue=88000.0}], regionSales=[{region=North, revenue=125000.0, percentage=35.0}, {region=South, revenue=89000.0, percentage=25.0}, {region=East, revenue=71000.0, percentage=20.0}, {region=West, revenue=71000.0, percentage=20.0}], productSales=[{product=Laptop, revenue=185000.0, quantity=185}, {product=Phone, revenue=125000.0, quantity=250}, {product=Tablet, revenue=56000.0, quantity=112}]}, message=Dashboard data retrieved successfully, timestamp=2026-04-26T16:52:10.188838}
+2026-04-26 16:52:59.811 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 16:52:59.811 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hi}
+2026-04-26 16:52:59.812 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hi
+2026-04-26 16:52:59.812 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 16:52:59.888 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T16:52:10.188838}
+2026-04-26 16:53:03.522 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 16:53:03.523 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hi}
+2026-04-26 16:53:03.523 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hi
+2026-04-26 16:53:03.523 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 16:53:03.588 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T16:52:10.188838}
+2026-04-26 16:55:24.054 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 16:55:24.064 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 18:01:32.704 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 11848 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 18:01:32.711 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 18:01:36.817 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 18:01:36.823 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 18:01:36.824 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 18:01:37.031 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 18:01:38.393 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 18:01:38.827 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a6195b8
+2026-04-26 18:01:38.831 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 18:01:38.965 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 18:01:38.968 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 18:01:42.690 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 18:01:43.486 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 18:01:43.532 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-04-26 18:01:43.540 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 18:01:43.558 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 18:01:43.615 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
 
 ***************************
 APPLICATION FAILED TO START
@@ -697,19 +337,199 @@ Action:
 
 Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
 
-2026-04-19 22:23:43.860 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 22084 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
-2026-04-19 22:23:43.864 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
-2026-04-19 22:23:46.702 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-19 22:23:46.708 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-19 22:23:46.708 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-04-19 22:23:46.963 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-04-19 22:23:47.941 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
-2026-04-19 22:23:48.258 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@b70fa38
-2026-04-19 22:23:48.263 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
-2026-04-19 22:23:48.350 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-19 22:23:48.352 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2026-04-19 22:23:51.304 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-19 22:23:51.910 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-04-19 22:23:51.974 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 9.356 seconds (process running for 10.412)
-2026-04-19 23:09:14.765 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
-2026-04-19 23:09:14.786 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 18:06:02.192 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 17992 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 18:06:02.197 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 18:06:05.244 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 18:06:05.248 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 18:06:05.248 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 18:06:05.481 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 18:06:06.602 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 18:06:06.979 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@69fe7090
+2026-04-26 18:06:06.984 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 18:06:07.079 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 18:06:07.081 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 18:06:10.330 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 18:06:11.282 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 18:06:11.422 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 10.506 seconds (process running for 11.52)
+2026-04-26 18:07:22.377 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 18:07:22.389 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 18:08:03.490 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 20876 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 18:08:03.493 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 18:08:06.558 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 18:08:06.563 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 18:08:06.563 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 18:08:06.740 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 18:08:07.783 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 18:08:08.129 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@4813d0
+2026-04-26 18:08:08.134 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 18:08:08.289 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 18:08:08.292 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 18:08:11.462 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 18:08:12.173 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 18:08:12.286 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 10.079 seconds (process running for 11.099)
+2026-04-26 18:18:57.494 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26 18:19:18.813 [http-nio-0.0.0.0-8080-exec-2] WARN  o.s.web.servlet.PageNotFound - Request method 'GET' is not supported
+2026-04-26 18:22:35.650 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 18:22:35.670 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 18:22:40.204 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 10696 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 18:22:40.208 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 18:22:45.115 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 18:22:45.125 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 18:22:45.126 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 18:22:45.348 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 18:22:46.801 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 18:22:47.195 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@6df2af02
+2026-04-26 18:22:47.200 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 18:22:47.313 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 18:22:47.315 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 18:22:51.265 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 18:22:52.310 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 18:22:52.377 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 13.759 seconds (process running for 15.047)
+2026-04-26 18:23:50.691 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26 18:23:54.119 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 18:23:54.119 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hi}
+2026-04-26 18:23:54.119 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hi
+2026-04-26 18:23:54.119 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 18:23:54.755 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T18:22:26.754413}
+2026-04-26 18:23:57.561 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - === SPRING BOOT DASHBOARD PROCESSING ===
+2026-04-26 18:23:57.561 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 1. Calling Python dashboard API: http://localhost:8000/ai/dashboard
+2026-04-26 18:23:57.688 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 2. Python dashboard response successful: {status=success, data={monthlySales=[{month=2024-01, revenue=75000.0}, {month=2024-02, revenue=82000.0}, {month=2024-03, revenue=68000.0}, {month=2024-04, revenue=91000.0}, {month=2024-05, revenue=78000.0}, {month=2024-06, revenue=85000.0}, {month=2024-07, revenue=92000.0}, {month=2024-08, revenue=88000.0}], regionSales=[{region=North, revenue=125000.0, percentage=35.0}, {region=South, revenue=89000.0, percentage=25.0}, {region=East, revenue=71000.0, percentage=20.0}, {region=West, revenue=71000.0, percentage=20.0}], productSales=[{product=Laptop, revenue=185000.0, quantity=185}, {product=Phone, revenue=125000.0, quantity=250}, {product=Tablet, revenue=56000.0, quantity=112}]}, message=Dashboard data retrieved successfully, timestamp=2026-04-26T18:22:26.754413}
+2026-04-26 18:24:05.344 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 18:24:05.345 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hii}
+2026-04-26 18:24:05.345 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hii
+2026-04-26 18:24:05.345 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 18:24:05.551 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T18:22:26.754413}
+2026-04-26 18:24:16.300 [http-nio-0.0.0.0-8080-exec-10] INFO  c.a.a.controller.MinimalController - === SPRING BOOT DASHBOARD PROCESSING ===
+2026-04-26 18:24:16.301 [http-nio-0.0.0.0-8080-exec-10] INFO  c.a.a.controller.MinimalController - 1. Calling Python dashboard API: http://localhost:8000/ai/dashboard
+2026-04-26 18:24:16.379 [http-nio-0.0.0.0-8080-exec-10] INFO  c.a.a.controller.MinimalController - 2. Python dashboard response successful: {status=success, data={monthlySales=[{month=2024-01, revenue=75000.0}, {month=2024-02, revenue=82000.0}, {month=2024-03, revenue=68000.0}, {month=2024-04, revenue=91000.0}, {month=2024-05, revenue=78000.0}, {month=2024-06, revenue=85000.0}, {month=2024-07, revenue=92000.0}, {month=2024-08, revenue=88000.0}], regionSales=[{region=North, revenue=125000.0, percentage=35.0}, {region=South, revenue=89000.0, percentage=25.0}, {region=East, revenue=71000.0, percentage=20.0}, {region=West, revenue=71000.0, percentage=20.0}], productSales=[{product=Laptop, revenue=185000.0, quantity=185}, {product=Phone, revenue=125000.0, quantity=250}, {product=Tablet, revenue=56000.0, quantity=112}]}, message=Dashboard data retrieved successfully, timestamp=2026-04-26T18:22:26.754413}
+2026-04-26 18:24:23.079 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 18:24:23.079 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hii}
+2026-04-26 18:24:23.079 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hii
+2026-04-26 18:24:23.080 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 18:24:23.261 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T18:22:26.754413}
+2026-04-26 18:24:28.077 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 18:24:28.077 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hii}
+2026-04-26 18:24:28.078 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hii
+2026-04-26 18:24:28.078 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 18:24:28.251 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T18:22:26.754413}
+2026-04-26 18:31:13.264 [http-nio-0.0.0.0-8080-exec-8] INFO  c.a.a.controller.MinimalController - === SPRING BOOT DASHBOARD PROCESSING ===
+2026-04-26 18:31:13.265 [http-nio-0.0.0.0-8080-exec-8] INFO  c.a.a.controller.MinimalController - 1. Calling Python dashboard API: http://localhost:8000/ai/dashboard
+2026-04-26 18:31:13.335 [http-nio-0.0.0.0-8080-exec-8] ERROR c.a.a.controller.MinimalController - 2. Python dashboard API call failed: I/O error on GET request for "http://localhost:8000/ai/dashboard": Connection refused: getsockopt
+2026-04-26 18:39:32.104 [ai-analytics-pool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Thread starvation or clock leap detected (housekeeper delta=7m14s577ms801Âµs500ns).
+2026-04-26 18:54:15.887 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 18:54:15.901 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 18:54:20.689 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 12508 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 18:54:20.695 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 18:54:24.058 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 18:54:24.061 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 18:54:24.062 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 18:54:24.248 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 18:54:25.491 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 18:54:25.835 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@386e9fd8
+2026-04-26 18:54:25.839 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 18:54:25.977 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 18:54:25.980 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 18:54:29.406 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 18:54:30.072 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 18:54:30.125 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 10.811 seconds (process running for 11.88)
+2026-04-26 18:55:27.354 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26 18:55:27.417 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - === SPRING BOOT DASHBOARD PROCESSING ===
+2026-04-26 18:55:27.418 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 1. Calling Python dashboard API: http://localhost:8000/ai/dashboard
+2026-04-26 18:55:27.909 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 2. Python dashboard response successful: {status=success, data={monthlySales=[{month=2024-01, revenue=75000.0}, {month=2024-02, revenue=82000.0}, {month=2024-03, revenue=68000.0}, {month=2024-04, revenue=91000.0}, {month=2024-05, revenue=78000.0}, {month=2024-06, revenue=85000.0}, {month=2024-07, revenue=92000.0}, {month=2024-08, revenue=88000.0}], regionSales=[{region=North, revenue=125000.0, percentage=35.0}, {region=South, revenue=89000.0, percentage=25.0}, {region=East, revenue=71000.0, percentage=20.0}, {region=West, revenue=71000.0, percentage=20.0}], productSales=[{product=Laptop, revenue=185000.0, quantity=185}, {product=Phone, revenue=125000.0, quantity=250}, {product=Tablet, revenue=56000.0, quantity=112}]}, message=Dashboard data retrieved successfully, timestamp=2026-04-26T18:54:08.390510}
+2026-04-26 18:55:34.309 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 18:55:34.313 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hi}
+2026-04-26 18:55:34.315 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hi
+2026-04-26 18:55:34.315 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 18:55:34.511 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T18:54:08.390510}
+2026-04-26 18:55:37.258 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 18:55:37.259 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hi}
+2026-04-26 18:55:37.259 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hi
+2026-04-26 18:55:37.259 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 18:55:37.436 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T18:54:08.390510}
+2026-04-26 18:55:46.669 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 18:55:46.670 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hi}
+2026-04-26 18:55:46.670 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hi
+2026-04-26 18:55:46.670 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 18:55:46.859 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T18:54:08.390510}
+2026-04-26 18:55:50.148 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 18:55:50.148 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hi}
+2026-04-26 18:55:50.148 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hi
+2026-04-26 18:55:50.148 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 18:55:50.277 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T18:54:08.390510}
+2026-04-26 18:56:05.009 [http-nio-0.0.0.0-8080-exec-8] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 18:56:05.010 [http-nio-0.0.0.0-8080-exec-8] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=tell me sales insights}
+2026-04-26 18:56:05.010 [http-nio-0.0.0.0-8080-exec-8] INFO  c.a.a.controller.MinimalController - 2. Question extracted: tell me sales insights
+2026-04-26 18:56:05.010 [http-nio-0.0.0.0-8080-exec-8] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 18:56:05.160 [http-nio-0.0.0.0-8080-exec-8] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T18:54:08.390510}
+2026-04-26 18:58:06.574 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 18:58:06.574 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=tell me sales insights}
+2026-04-26 18:58:06.574 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 2. Question extracted: tell me sales insights
+2026-04-26 18:58:06.574 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 18:58:06.741 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T18:54:08.390510}
+2026-04-26 19:02:21.293 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 19:02:21.313 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 19:02:29.393 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 5776 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 19:02:29.407 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 19:02:34.283 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 19:02:34.290 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 19:02:34.291 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 19:02:34.515 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 19:02:36.161 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 19:02:36.553 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@6df2af02
+2026-04-26 19:02:36.557 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 19:02:36.683 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 19:02:36.688 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 19:02:41.170 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 19:02:42.084 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 19:02:42.172 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 14.365 seconds (process running for 15.621)
+2026-04-26 19:03:48.246 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26 19:03:48.315 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - === SPRING BOOT DASHBOARD PROCESSING ===
+2026-04-26 19:03:48.316 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 1. Calling Python dashboard API: http://localhost:8000/ai/dashboard
+2026-04-26 19:03:48.626 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 2. Python dashboard response successful: {status=success, data={monthlySales=[{month=2024-01, revenue=75000.0}, {month=2024-02, revenue=82000.0}, {month=2024-03, revenue=68000.0}, {month=2024-04, revenue=91000.0}, {month=2024-05, revenue=78000.0}, {month=2024-06, revenue=85000.0}, {month=2024-07, revenue=92000.0}, {month=2024-08, revenue=88000.0}], regionSales=[{region=North, revenue=125000.0, percentage=35.0}, {region=South, revenue=89000.0, percentage=25.0}, {region=East, revenue=71000.0, percentage=20.0}, {region=West, revenue=71000.0, percentage=20.0}], productSales=[{product=Laptop, revenue=185000.0, quantity=185}, {product=Phone, revenue=125000.0, quantity=250}, {product=Tablet, revenue=56000.0, quantity=112}]}, message=Dashboard data retrieved successfully, timestamp=2026-04-26T19:02:14.253803}
+2026-04-26 19:04:03.052 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 19:04:03.052 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hi}
+2026-04-26 19:04:03.052 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hi
+2026-04-26 19:04:03.053 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 19:04:03.251 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T19:02:14.253803}
+2026-04-26 19:04:06.009 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 19:04:06.009 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hi}
+2026-04-26 19:04:06.010 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hi
+2026-04-26 19:04:06.010 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 19:04:06.233 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T19:02:14.253803}
+2026-04-26 19:05:01.489 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 19:05:01.489 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=sales}
+2026-04-26 19:05:01.490 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 2. Question extracted: sales
+2026-04-26 19:05:01.490 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 19:05:01.639 [http-nio-0.0.0.0-8080-exec-7] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T19:02:14.253803}
+2026-04-26 19:08:22.670 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 19:08:22.689 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-26 19:14:09.799 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 16056 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-26 19:14:09.803 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-26 19:14:14.154 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 19:14:14.161 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-26 19:14:14.162 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-26 19:14:14.392 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-26 19:14:15.872 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-26 19:14:16.301 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@504b8705
+2026-04-26 19:14:16.305 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-26 19:14:16.397 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-26 19:14:16.399 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-26 19:14:20.254 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-26 19:14:21.167 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-04-26 19:14:21.237 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 13.064 seconds (process running for 14.21)
+2026-04-26 19:15:21.538 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-26 19:15:21.704 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 19:15:21.704 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hii}
+2026-04-26 19:15:21.705 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hii
+2026-04-26 19:15:21.705 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 19:15:22.064 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T19:13:57.390334}
+2026-04-26 19:15:35.051 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-04-26 19:15:35.052 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=laptop price}
+2026-04-26 19:15:35.052 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 2. Question extracted: laptop price
+2026-04-26 19:15:35.052 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-04-26 19:15:35.301 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analysis completed on sales data, insights=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Analyzed 16 records, Revenue range: $1000.00 - $6000.00, Data covers 60 days]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-04-26T19:13:57.390334}
+2026-04-26 19:15:38.628 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - === SPRING BOOT DASHBOARD PROCESSING ===
+2026-04-26 19:15:38.628 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 1. Calling Python dashboard API: http://localhost:8000/ai/dashboard
+2026-04-26 19:15:38.715 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 2. Python dashboard response successful: {status=success, data={monthlySales=[{month=2024-01, revenue=75000.0}, {month=2024-02, revenue=82000.0}, {month=2024-03, revenue=68000.0}, {month=2024-04, revenue=91000.0}, {month=2024-05, revenue=78000.0}, {month=2024-06, revenue=85000.0}, {month=2024-07, revenue=92000.0}, {month=2024-08, revenue=88000.0}], regionSales=[{region=North, revenue=125000.0, percentage=35.0}, {region=South, revenue=89000.0, percentage=25.0}, {region=East, revenue=71000.0, percentage=20.0}, {region=West, revenue=71000.0, percentage=20.0}], productSales=[{product=Laptop, revenue=185000.0, quantity=185}, {product=Phone, revenue=125000.0, quantity=250}, {product=Tablet, revenue=56000.0, quantity=112}]}, message=Dashboard data retrieved successfully, timestamp=2026-04-26T19:13:57.390334}
+2026-04-26 19:15:49.870 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-26 19:15:49.890 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.

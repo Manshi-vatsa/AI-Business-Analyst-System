@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/AI_Business_Analyst_System.iml" filepath="$PROJECT_DIR$/.idea/AI_Business_Analyst_System.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ai-python-service/ai-python-service.iml" filepath="$PROJECT_DIR$/ai-python-service/ai-python-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-app.iml" filepath="$PROJECT_DIR$/.idea/modules/android-app.iml" />
     </modules>
   </component>
 </project>
