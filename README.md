@@ -23,7 +23,7 @@ ai-python-service/
 ```
 ## Screenshots
 ## AI Alerts Screen
-![AI Alerts Screen](screenshots/AI_Alerts_Screens.png)
+![AI Alerts Screen](screenshots/AI_Alerts_Screen.png)
 
 ## AI Chat
 ![AI Chat](screenshots/AI_Chat.png)
