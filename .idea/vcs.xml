@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-<<<<<<< HEAD
-    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
-=======
     <mapping directory="" vcs="Git" />
->>>>>>> 0127ff1f41b42a8e0ede265d4c87e8dd6dec9fa3
+    <mapping directory="$PROJECT_DIR$/ai-python-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/backend-springboot" vcs="Git" />
   </component>
 </project>

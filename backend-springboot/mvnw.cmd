@@ -60,11 +60,12 @@ if exist "%USERPROFILE%\mavenrc_pre.cmd" call "%USERPROFILE%\mavenrc_pre.cmd" %*
 @REM To isolate internal variables from possible post scripts, we use another setlocal
 @setlocal
 @REM ==== START VALIDATION ====
-if not "%JAVA_HOME%" == "" goto noJavacHome
+
+if "%JAVA_HOME%"=="" goto noJavacHome
 
 if not exist "%JAVA_HOME%\bin\java.exe" goto noJavacHome
 if not exist "%JAVA_HOME%\bin\javaw.exe" goto noJavacHome
-if not "%JAVA_HOME%\bin\java.exe" == "" goto noJavacHome
+
 goto okJavacHome
 
 :noJavacHome
@@ -76,6 +77,7 @@ echo.
 goto error
 
 :okJavacHome
+
 @REM ==== END VALIDATION ====
 
 @REM Find the project base dir, i.e. the directory that contains the folder ".mvn".
@@ -105,17 +107,22 @@ if exist "%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config" (
 @REM set JAVACMD and JAVAWCMD
 @REM NOTE: In a DOS environment, using the batch files is required because of the
 @REM       parenthesis in the path names.  The JVM can't handle them.
-set JAVACMD="%JAVA_HOME%\bin\java.exe"
-set JAVAWCMD="%JAVA_HOME%\bin\javaw.exe"
+
+set JAVACMD=%JAVA_HOME%\bin\java.exe
+set JAVAWCMD=%JAVA_HOME%\bin\javaw.exe
 
 @REM ==== START VALIDATION ====
-if not "%JAVACMD%" == "" goto okJavaCmd
+
+if "%JAVACMD%" == "" goto error
+goto okJavaCmd
+
 echo.
 echo Error: JAVACMD is not set correctly.
 echo.
 goto error
 
 :okJavaCmd
+
 @REM ==== END VALIDATION ====
 
 @REM ==== START FIND MAVEN ====
