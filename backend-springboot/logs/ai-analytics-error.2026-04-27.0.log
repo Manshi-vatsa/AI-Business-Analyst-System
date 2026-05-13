@@ -1,0 +1,1 @@
+2026-04-27 18:42:25.970 [http-nio-0.0.0.0-8080-exec-4] ERROR c.a.a.controller.MinimalController - 2. Python dashboard API call failed: 500 Internal Server Error: "Internal Server Error"

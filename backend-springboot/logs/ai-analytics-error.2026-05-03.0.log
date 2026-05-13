@@ -1,0 +1,5 @@
+2026-05-03 00:29:40.517 [http-nio-0.0.0.0-8080-exec-1] ERROR c.a.a.controller.MinimalController - 2. Python dashboard API call failed: 500 Internal Server Error: "Internal Server Error"
+2026-05-03 19:32:45.130 [http-nio-0.0.0.0-8080-exec-2] ERROR c.a.a.controller.MinimalController - 5. Python API call failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-03 19:35:36.186 [http-nio-0.0.0.0-8080-exec-4] ERROR c.a.a.controller.MinimalController - 5. Python API call failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-03 19:37:05.673 [http-nio-0.0.0.0-8080-exec-1] ERROR c.a.a.controller.MinimalController - 5. Python API call failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-03 19:39:49.691 [http-nio-0.0.0.0-8080-exec-6] ERROR c.a.a.controller.MinimalController - 5. Python API call failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out

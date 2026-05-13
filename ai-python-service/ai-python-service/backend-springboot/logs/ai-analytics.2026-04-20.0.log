@@ -1,0 +1,66 @@
+2026-04-20 19:54:06.058 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 13848 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-20 19:54:06.068 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-20 19:54:07.583 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-20 19:54:07.585 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 19:54:07.585 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-20 19:54:07.661 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-20 19:54:08.213 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-20 19:54:08.398 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@5611bba
+2026-04-20 19:54:08.400 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-20 19:54:08.469 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-20 19:54:08.470 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-20 19:54:10.014 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-20 19:54:10.384 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-20 19:54:10.420 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 5.047 seconds (process running for 5.588)
+2026-04-20 20:47:41.264 [ai-analytics-pool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Thread starvation or clock leap detected (housekeeper delta=15m32s162ms107µs800ns).
+2026-04-20 21:21:47.448 [ai-analytics-pool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Thread starvation or clock leap detected (housekeeper delta=9m35s718ms129µs800ns).
+2026-04-20 21:28:17.441 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-20 21:28:17.454 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-20 22:12:42.192 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 1560 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-20 22:12:42.198 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-20 22:12:46.746 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-20 22:12:46.752 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 22:12:46.752 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-20 22:12:46.951 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-20 22:12:48.549 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-20 22:12:49.009 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ff6804a
+2026-04-20 22:12:49.014 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-20 22:12:49.145 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-20 22:12:49.150 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-20 22:12:53.123 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-20 22:12:54.140 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-20 22:12:54.204 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 14.752 seconds (process running for 16.139)
+2026-04-20 22:13:19.245 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-20 22:13:19.282 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-20 22:38:03.736 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 14656 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-20 22:38:03.740 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-20 22:38:07.888 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-20 22:38:07.893 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 22:38:07.894 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-20 22:38:08.076 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-20 22:38:09.257 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-20 22:38:09.686 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@347123dc
+2026-04-20 22:38:09.690 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-20 22:38:09.834 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-20 22:38:09.837 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-20 22:38:13.575 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-20 22:38:14.271 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-20 22:38:14.325 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 12.122 seconds (process running for 13.365)
+2026-04-20 22:52:16.014 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-20 22:52:16.029 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-04-20 22:58:20.119 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 9580 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-04-20 22:58:20.122 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-04-20 22:58:21.472 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-20 22:58:21.474 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 22:58:21.475 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-20 22:58:21.552 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-20 22:58:22.089 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-04-20 22:58:22.233 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@6a4a2090
+2026-04-20 22:58:22.235 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-04-20 22:58:22.284 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-20 22:58:22.285 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-04-20 22:58:23.730 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-20 22:58:24.032 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-20 22:58:24.056 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 4.505 seconds (process running for 4.976)
+2026-04-20 23:35:37.643 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-04-20 23:35:37.647 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.

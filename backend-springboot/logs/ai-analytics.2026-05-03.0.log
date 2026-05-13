@@ -1,0 +1,115 @@
+2026-05-03 00:00:19.313 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 20764 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-05-03 00:00:19.326 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-05-03 00:00:20.894 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-03 00:00:20.896 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-03 00:00:20.897 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-03 00:00:20.974 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-03 00:00:21.566 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-05-03 00:00:21.720 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@15f861ee
+2026-05-03 00:00:21.722 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-05-03 00:00:21.767 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-03 00:00:21.767 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-03 00:00:23.257 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-03 00:00:23.669 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-03 00:00:23.717 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 5.088 seconds (process running for 5.633)
+2026-05-03 00:29:30.504 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-03 00:29:30.538 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - === SPRING BOOT DASHBOARD PROCESSING ===
+2026-05-03 00:29:30.538 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 1. Calling Python dashboard API: http://localhost:8000/ai/dashboard
+2026-05-03 00:29:40.517 [http-nio-0.0.0.0-8080-exec-1] ERROR c.a.a.controller.MinimalController - 2. Python dashboard API call failed: 500 Internal Server Error: "Internal Server Error"
+2026-05-03 00:35:13.287 [ai-analytics-pool housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Thread starvation or clock leap detected (housekeeper delta=4m50s978ms318µs900ns).
+2026-05-03 00:35:31.647 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-05-03 00:35:31.652 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-05-03 19:21:57.149 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 25696 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-05-03 19:21:57.167 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-05-03 19:22:01.411 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-03 19:22:01.420 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-03 19:22:01.420 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-03 19:22:01.681 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-03 19:22:03.299 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-05-03 19:22:03.760 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@70d5d96b
+2026-05-03 19:22:03.765 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-05-03 19:22:03.897 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-03 19:22:03.899 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-03 19:22:08.943 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-03 19:22:09.782 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-03 19:22:09.853 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 14.526 seconds (process running for 16.148)
+2026-05-03 19:26:54.861 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-05-03 19:26:54.879 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-05-03 19:27:29.310 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 5324 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-05-03 19:27:29.316 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-05-03 19:27:32.441 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-03 19:27:32.446 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-03 19:27:32.447 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-03 19:27:32.622 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-03 19:27:33.663 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-05-03 19:27:33.961 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@6501b105
+2026-05-03 19:27:33.965 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-05-03 19:27:34.038 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-03 19:27:34.041 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-03 19:27:37.725 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-03 19:27:38.362 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-03 19:27:38.416 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 10.421 seconds (process running for 11.476)
+2026-05-03 19:32:10.752 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-03 19:32:10.916 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-03 19:32:10.917 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=total sales}
+2026-05-03 19:32:10.917 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 2. Question extracted: total sales
+2026-05-03 19:32:10.917 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-03 19:32:20.740 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Total revenue is $60,000.00 Based on the analysis, I found 3 key insights about your sales data., insights=[Total revenue: $60,000.00, Total transactions: 16, Average transaction value: $3750.00], steps_executed=[get sales data, calculate total], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[Total revenue: $60,000.00, Total transactions: 16], trends=[], recommendations=[]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-05-03T19:27:25.901323}
+2026-05-03 19:32:35.118 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-03 19:32:35.118 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=insights of revenue}
+2026-05-03 19:32:35.118 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 2. Question extracted: insights of revenue
+2026-05-03 19:32:35.118 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-03 19:32:45.130 [http-nio-0.0.0.0-8080-exec-2] ERROR c.a.a.controller.MinimalController - 5. Python API call failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-03 19:32:45.130 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 6. Using fallback response
+2026-05-03 19:35:26.178 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-03 19:35:26.178 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=total sales}
+2026-05-03 19:35:26.178 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 2. Question extracted: total sales
+2026-05-03 19:35:26.180 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-03 19:35:36.186 [http-nio-0.0.0.0-8080-exec-4] ERROR c.a.a.controller.MinimalController - 5. Python API call failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-03 19:35:36.251 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 6. Using fallback response
+2026-05-03 19:36:31.022 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-05-03 19:36:31.040 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-05-03 19:36:35.373 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 19944 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-05-03 19:36:35.375 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-05-03 19:36:38.950 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-03 19:36:38.957 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-03 19:36:38.958 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-03 19:36:39.280 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-03 19:36:40.736 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-05-03 19:36:41.144 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@386e9fd8
+2026-05-03 19:36:41.147 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-05-03 19:36:41.241 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-03 19:36:41.243 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-03 19:36:44.985 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-03 19:36:45.782 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-03 19:36:45.853 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 11.971 seconds (process running for 13.099)
+2026-05-03 19:36:55.446 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-03 19:36:55.574 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-03 19:36:55.575 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hii}
+2026-05-03 19:36:55.575 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hii
+2026-05-03 19:36:55.575 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-03 19:37:05.673 [http-nio-0.0.0.0-8080-exec-1] ERROR c.a.a.controller.MinimalController - 5. Python API call failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-03 19:37:05.675 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 6. Using fallback response
+2026-05-03 19:37:15.320 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-03 19:37:15.321 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=total sales}
+2026-05-03 19:37:15.321 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 2. Question extracted: total sales
+2026-05-03 19:37:15.321 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-03 19:37:24.827 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Total revenue is $60,000.00 Based on the analysis, I found 3 key insights about your sales data., insights=[Total revenue: $60,000.00, Total transactions: 16, Average transaction value: $3750.00], steps_executed=[get sales data, calculate total], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[Total revenue: $60,000.00, Total transactions: 16], trends=[], recommendations=[]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-05-03T19:36:31.228588}
+2026-05-03 19:37:34.080 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-03 19:37:34.080 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=product details}
+2026-05-03 19:37:34.080 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 2. Question extracted: product details
+2026-05-03 19:37:34.080 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-03 19:37:43.964 [http-nio-0.0.0.0-8080-exec-3] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=The best performing product is Product A I also analyzed 3 different aspects to give you a complete picture., insights=[Best performing product: Product A with $21,500.00, Worst performing product: Product D with $7,500.00, Product performance gap: $14,000.00], steps_executed=[get sales data, group by product, find top performer], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 3 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Best performing product: Product A with $21,500.00, Worst performing product: Product D with $7,500.00, Product performance gap: $14,000.00]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-05-03T19:36:31.228588}
+2026-05-03 19:39:16.097 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-03 19:39:16.097 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=revenue}
+2026-05-03 19:39:16.097 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 2. Question extracted: revenue
+2026-05-03 19:39:16.097 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-03 19:39:26.022 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analyzed 16 records Here's the key insight I found., insights=[Data processed successfully], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 1 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Data processed successfully]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-05-03T19:36:31.228588}
+2026-05-03 19:39:39.672 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-03 19:39:39.673 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=region wise sales}
+2026-05-03 19:39:39.673 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - 2. Question extracted: region wise sales
+2026-05-03 19:39:39.673 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-03 19:39:49.691 [http-nio-0.0.0.0-8080-exec-6] ERROR c.a.a.controller.MinimalController - 5. Python API call failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-03 19:39:49.692 [http-nio-0.0.0.0-8080-exec-6] INFO  c.a.a.controller.MinimalController - 6. Using fallback response
+2026-05-03 19:45:17.381 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-05-03 19:45:17.396 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.

@@ -1,0 +1,272 @@
+2026-05-07 15:38:46.203 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 23344 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-05-07 15:38:46.239 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-05-07 15:38:52.466 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-07 15:38:52.472 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-07 15:38:52.473 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-07 15:38:52.799 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-07 15:38:54.745 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-05-07 15:38:55.374 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@15f861ee
+2026-05-07 15:38:55.380 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-05-07 15:38:55.570 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-07 15:38:55.575 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-07 15:39:00.926 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-07 15:39:03.132 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-07 15:39:03.235 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 18.997 seconds (process running for 20.815)
+2026-05-07 15:40:09.909 [http-nio-0.0.0.0-8080-exec-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-07 15:40:10.057 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-07 15:40:10.058 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hii}
+2026-05-07 15:40:10.058 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hii
+2026-05-07 15:40:10.058 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-07 15:40:20.189 [http-nio-0.0.0.0-8080-exec-4] ERROR c.a.a.controller.MinimalController - 5. Python API call failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-07 15:40:20.195 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 6. Using fallback response
+2026-05-07 15:40:37.789 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-07 15:40:37.790 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=region wise sales}
+2026-05-07 15:40:37.790 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 2. Question extracted: region wise sales
+2026-05-07 15:40:37.790 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-07 15:40:47.811 [http-nio-0.0.0.0-8080-exec-5] ERROR c.a.a.controller.MinimalController - 5. Python API call failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-07 15:40:47.811 [http-nio-0.0.0.0-8080-exec-5] INFO  c.a.a.controller.MinimalController - 6. Using fallback response
+2026-05-07 15:42:07.021 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-07 15:42:07.021 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=Data analysis}
+2026-05-07 15:42:07.021 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 2. Question extracted: Data analysis
+2026-05-07 15:42:07.021 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-07 15:42:16.444 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 5. Python API response successful: {status=success, data={answer=Analyzed 16 records Here's the key insight I found., insights=[Data processed successfully], steps_executed=[get sales data, analyze data], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 2 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 1 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Data processed successfully]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-05-07T15:38:40.740160}
+2026-05-07 15:50:24.416 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-05-07 15:50:24.431 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-05-07 15:54:31.668 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 2944 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-05-07 15:54:31.672 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-05-07 15:54:36.138 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-07 15:54:36.145 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-07 15:54:36.145 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-07 15:54:36.339 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-07 15:54:37.943 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-05-07 15:54:38.475 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@66ab924
+2026-05-07 15:54:38.478 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-05-07 15:54:38.627 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-07 15:54:38.630 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-07 15:54:43.401 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-07 15:54:43.645 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.
+2026-05-07 15:54:43.650 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-05-07 15:54:43.671 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-05-07 15:54:43.676 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-05-07 15:54:43.750 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
+Caused by: java.lang.IllegalArgumentException: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.
+	at org.springframework.web.cors.CorsConfiguration.validateAllowCredentials(CorsConfiguration.java:572)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:654)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:508)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:239)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 16 common frames omitted
+2026-05-07 15:56:35.364 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 4420 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-05-07 15:56:35.378 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-05-07 15:56:39.961 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-07 15:56:39.967 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-07 15:56:39.968 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-07 15:56:40.136 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-07 15:56:41.534 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-05-07 15:56:41.976 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@29d2fa84
+2026-05-07 15:56:41.986 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-05-07 15:56:42.202 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-07 15:56:42.208 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-07 15:56:45.973 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-07 15:56:46.157 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.
+2026-05-07 15:56:46.161 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-05-07 15:56:46.179 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-05-07 15:56:46.189 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-05-07 15:56:46.257 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
+Caused by: java.lang.IllegalArgumentException: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.
+	at org.springframework.web.cors.CorsConfiguration.validateAllowCredentials(CorsConfiguration.java:572)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:654)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:508)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:239)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 16 common frames omitted
+2026-05-07 15:59:47.299 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 19980 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-05-07 15:59:47.305 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-05-07 15:59:51.978 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-07 15:59:51.988 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-07 15:59:51.989 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-07 15:59:52.221 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-07 15:59:53.879 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-05-07 15:59:54.277 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@10745a02
+2026-05-07 15:59:54.281 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-05-07 15:59:54.382 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-07 15:59:54.386 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-07 15:59:58.603 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-07 15:59:58.877 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'minimalController' method 
+com.ai.analytics.controller.MinimalController#processQuery(Map)
+to {POST [/ai/query]}: There is already 'enhancedQueryController' bean method
+com.ai.analytics.controller.EnhancedQueryController#processQuery(Map) mapped.
+2026-05-07 15:59:58.885 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-05-07 15:59:58.900 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-05-07 15:59:58.905 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-05-07 15:59:59.007 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'minimalController' method 
+com.ai.analytics.controller.MinimalController#processQuery(Map)
+to {POST [/ai/query]}: There is already 'enhancedQueryController' bean method
+com.ai.analytics.controller.EnhancedQueryController#processQuery(Map) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.ai.analytics.AiAnalyticsApplication.main(AiAnalyticsApplication.java:10)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'minimalController' method 
+com.ai.analytics.controller.MinimalController#processQuery(Map)
+to {POST [/ai/query]}: There is already 'enhancedQueryController' bean method
+com.ai.analytics.controller.EnhancedQueryController#processQuery(Map) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:674)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:636)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:508)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:239)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 16 common frames omitted
+2026-05-07 16:07:53.284 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 15040 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-05-07 16:07:53.292 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-05-07 16:07:57.788 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-07 16:07:57.800 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-07 16:07:57.801 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-07 16:07:58.019 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-07 16:07:59.675 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-05-07 16:08:00.146 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@66ab924
+2026-05-07 16:08:00.156 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-05-07 16:08:00.436 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-07 16:08:00.438 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-07 16:08:04.397 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-07 16:08:05.364 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-07 16:08:05.425 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 13.747 seconds (process running for 14.963)
+2026-05-07 16:08:41.482 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-07 16:08:41.643 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.c.EnhancedQueryController - === ENHANCED SPRING BOOT QUERY PROCESSING ===
+2026-05-07 16:08:41.644 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.c.EnhancedQueryController - 1. Request received: {question=hii}
+2026-05-07 16:08:41.644 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.c.EnhancedQueryController - 2. FastAPI URL: http://localhost:8000/ai/query
+2026-05-07 16:08:41.644 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.c.EnhancedQueryController - 3. Question extracted: hii
+2026-05-07 16:08:41.644 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.c.EnhancedQueryController - 4. Calling Python FastAPI service: http://localhost:8000/ai/query
+2026-05-07 16:08:41.645 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.c.EnhancedQueryController - 5. Making HTTP POST request to FastAPI...
+2026-05-07 16:08:51.849 [http-nio-0.0.0.0-8080-exec-1] ERROR c.a.a.c.EnhancedQueryController - 6. FastAPI service connection failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-07 16:08:51.850 [http-nio-0.0.0.0-8080-exec-1] ERROR c.a.a.c.EnhancedQueryController - 7. Connection error details: ResourceAccessException
+2026-05-07 16:09:06.762 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.c.EnhancedQueryController - === ENHANCED SPRING BOOT QUERY PROCESSING ===
+2026-05-07 16:09:06.762 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.c.EnhancedQueryController - 1. Request received: {question=region wise sales}
+2026-05-07 16:09:06.763 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.c.EnhancedQueryController - 2. FastAPI URL: http://localhost:8000/ai/query
+2026-05-07 16:09:06.763 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.c.EnhancedQueryController - 3. Question extracted: region wise sales
+2026-05-07 16:09:06.763 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.c.EnhancedQueryController - 4. Calling Python FastAPI service: http://localhost:8000/ai/query
+2026-05-07 16:09:06.763 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.c.EnhancedQueryController - 5. Making HTTP POST request to FastAPI...
+2026-05-07 16:09:16.506 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.c.EnhancedQueryController - 6. FastAPI response successful - Status: 200 OK
+2026-05-07 16:09:16.510 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.c.EnhancedQueryController - 7. Full response data: {status=success, data={answer=The top performing region is North I also analyzed 3 different aspects to give you a complete picture., insights=[Top performing region: North with $21,500.00, North had 5.0 transactions, Lowest performing region: West with $7,500.00], steps_executed=[get sales data, group by region, find best performer], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 3 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Top performing region: North with $21,500.00, North had 5.0 transactions, Lowest performing region: West with $7,500.00]}}, message=Query processed successfully through multi-agent pipeline, timestamp=2026-05-07T16:08:23.362299}
+2026-05-07 16:09:16.511 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.c.EnhancedQueryController - 8. Valid FastAPI ApiResponse structure detected and unwrapped
+2026-05-07 16:09:16.512 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.c.EnhancedQueryController - 9. Unwrapped data: {answer=The top performing region is North I also analyzed 3 different aspects to give you a complete picture., insights=[Top performing region: North with $21,500.00, North had 5.0 transactions, Lowest performing region: West with $7,500.00], steps_executed=[get sales data, group by region, find best performer], agent_logs=[Planner Agent: Generating execution steps, Planner Agent: Generated 3 execution steps, Data Agent: Converting natural language to SQL and executing query, Data Agent: Retrieved 16 records from database, Analysis Agent: Using pandas to detect patterns and generate insights, Analysis Agent: Generated 3 insights, Report Agent: Converting insights into human-readable answer, Report Agent: Final report generated successfully, Analysis Agent: Aggregating dashboard data using pandas, Dashboard Data: Generated 3 data categories, Analysis Agent: Detecting insights for database storage, Insights Detection: Found 0 insights, Data Agent: Storing insights in MySQL database], context={key_metrics=[], trends=[], recommendations=[], general=[Top performing region: North with $21,500.00, North had 5.0 transactions, Lowest performing region: West with $7,500.00]}}
+2026-05-07 16:11:27.378 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-05-07 16:11:27.394 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-05-07 16:17:25.773 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 18940 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-05-07 16:17:25.779 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-05-07 16:17:30.751 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-07 16:17:30.758 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-07 16:17:30.760 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-07 16:17:30.982 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-07 16:17:32.638 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-05-07 16:17:33.065 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@5403431a
+2026-05-07 16:17:33.069 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-05-07 16:17:33.173 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-07 16:17:33.177 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-07 16:17:37.483 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-07 16:17:38.404 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-07 16:17:38.477 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 14.449 seconds (process running for 15.865)
+2026-05-07 16:37:58.438 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-05-07 16:37:58.443 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
+2026-05-07 20:20:06.967 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 8096 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-05-07 20:20:06.969 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-05-07 20:20:08.589 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-07 20:20:08.592 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-07 20:20:08.592 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-07 20:20:08.673 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-07 20:20:09.291 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-05-07 20:20:09.498 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@24a8e40d
+2026-05-07 20:20:09.501 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-05-07 20:20:09.571 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-07 20:20:09.572 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-07 20:20:11.183 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-07 20:20:11.551 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-07 20:20:11.578 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 5.3 seconds (process running for 5.863)
+2026-05-07 20:20:39.766 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-07 20:20:39.837 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.c.EnhancedQueryController - === ENHANCED SPRING BOOT QUERY PROCESSING ===
+2026-05-07 20:20:39.837 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.c.EnhancedQueryController - 1. Request received: {question=region wise sales}
+2026-05-07 20:20:39.837 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.c.EnhancedQueryController - 2. FastAPI URL: http://localhost:8000/ai/query
+2026-05-07 20:20:39.837 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.c.EnhancedQueryController - 3. Question extracted: region wise sales
+2026-05-07 20:20:39.837 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.c.EnhancedQueryController - 4. Calling Python FastAPI service: http://localhost:8000/ai/query
+2026-05-07 20:20:39.837 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.c.EnhancedQueryController - 5. Making HTTP POST request to FastAPI...
+2026-05-07 20:20:49.907 [http-nio-0.0.0.0-8080-exec-1] ERROR c.a.a.c.EnhancedQueryController - 6. FastAPI service connection failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-07 20:20:49.908 [http-nio-0.0.0.0-8080-exec-1] ERROR c.a.a.c.EnhancedQueryController - 7. Connection error details: ResourceAccessException
+2026-05-07 20:21:03.158 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-05-07 20:21:03.167 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.

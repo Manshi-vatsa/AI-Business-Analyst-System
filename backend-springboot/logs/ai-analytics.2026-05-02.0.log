@@ -1,0 +1,32 @@
+2026-05-02 23:52:23.676 [main] INFO  c.a.analytics.AiAnalyticsApplication - Starting AiAnalyticsApplication using Java 22 with PID 10108 (D:\AI_Business_Analyst_System\backend-springboot\target\classes started by MANSHI VATSA in D:\AI_Business_Analyst_System\backend-springboot)
+2026-05-02 23:52:23.685 [main] INFO  c.a.analytics.AiAnalyticsApplication - The following 1 profile is active: "dev"
+2026-05-02 23:52:25.465 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-02 23:52:25.468 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-02 23:52:25.468 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-02 23:52:25.553 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-02 23:52:26.212 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Starting...
+2026-05-02 23:52:26.494 [main] INFO  com.zaxxer.hikari.pool.HikariPool - ai-analytics-pool - Added connection com.mysql.cj.jdbc.ConnectionImpl@2bc0b8c8
+2026-05-02 23:52:26.495 [main] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Start completed.
+2026-05-02 23:52:26.575 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-02 23:52:26.576 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-05-02 23:52:28.381 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-02 23:52:28.758 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-05-02 23:52:28.795 [main] INFO  c.a.analytics.AiAnalyticsApplication - Started AiAnalyticsApplication in 5.809 seconds (process running for 6.474)
+2026-05-02 23:52:48.421 [http-nio-0.0.0.0-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-02 23:52:48.498 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-02 23:52:48.498 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=hii}
+2026-05-02 23:52:48.498 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 2. Question extracted: hii
+2026-05-02 23:52:48.498 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-02 23:52:58.559 [http-nio-0.0.0.0-8080-exec-1] ERROR c.a.a.controller.MinimalController - 5. Python API call failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-02 23:52:58.561 [http-nio-0.0.0.0-8080-exec-1] INFO  c.a.a.controller.MinimalController - 6. Using fallback response
+2026-05-02 23:53:04.151 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - === SPRING BOOT DASHBOARD PROCESSING ===
+2026-05-02 23:53:04.151 [http-nio-0.0.0.0-8080-exec-2] INFO  c.a.a.controller.MinimalController - 1. Calling Python dashboard API: http://localhost:8000/ai/dashboard
+2026-05-02 23:53:13.941 [http-nio-0.0.0.0-8080-exec-2] ERROR c.a.a.controller.MinimalController - 2. Python dashboard API call failed: 500 Internal Server Error: "Internal Server Error"
+2026-05-02 23:53:39.131 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - === SPRING BOOT QUERY PROCESSING ===
+2026-05-02 23:53:39.131 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 1. Request received: {question=analyse product}
+2026-05-02 23:53:39.131 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 2. Question extracted: analyse product
+2026-05-02 23:53:39.131 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 4. Calling Python API: http://localhost:8000/ai/query
+2026-05-02 23:53:49.142 [http-nio-0.0.0.0-8080-exec-4] ERROR c.a.a.controller.MinimalController - 5. Python API call failed: I/O error on POST request for "http://localhost:8000/ai/query": Read timed out
+2026-05-02 23:53:49.143 [http-nio-0.0.0.0-8080-exec-4] INFO  c.a.a.controller.MinimalController - 6. Using fallback response
+2026-05-02 23:54:01.545 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown initiated...
+2026-05-02 23:54:01.553 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - ai-analytics-pool - Shutdown completed.
