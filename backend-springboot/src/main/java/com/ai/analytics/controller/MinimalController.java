@@ -3,6 +3,7 @@ package com.ai.analytics.controller;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestClientException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 
@@ -23,25 +24,42 @@ public class MinimalController {
     private static final Logger logger =
             LoggerFactory.getLogger(MinimalController.class);
 
-    // ==============================
+    // ==========================================
     // PYTHON AI SERVICE URL
-    // ==============================
+    // ==========================================
     private static final String PYTHON_BASE_URL =
-            "https://ai-business-analyst-system.onrender.com";
+            System.getenv().getOrDefault(
+                    "FASTAPI_URL",
+                    "https://ai-business-analyst-system.onrender.com"
+            );
 
     @Autowired
     private RestTemplate restTemplate;
 
-    // ==============================
+    // ==========================================
+    // HEALTH ENDPOINT
+    // ==========================================
+    @GetMapping("/health")
+    public ResponseEntity<Map<String, Object>> healthCheck() {
+
+        Map<String, Object> response = new HashMap<>();
+
+        response.put("status", "healthy");
+        response.put("springboot", true);
+        response.put("python_ai_url", PYTHON_BASE_URL);
+
+        return ResponseEntity.ok(response);
+    }
+
+    // ==========================================
     // AI QUERY ENDPOINT
-    // ==============================
+    // ==========================================
     @PostMapping("/query")
     public ResponseEntity<Map<String, Object>> processQuery(
             @RequestBody Map<String, String> request
     ) {
 
         logger.info("=== SPRING BOOT QUERY PROCESSING ===");
-        logger.info("1. Request received: {}", request);
 
         Map<String, Object> response = new HashMap<>();
 
@@ -49,11 +67,9 @@ public class MinimalController {
 
             String question = request.get("question");
 
-            logger.info("2. Question extracted: {}", question);
+            logger.info("Question = {}", question);
 
             if (question == null || question.trim().isEmpty()) {
-
-                logger.warn("3. Question is empty or null");
 
                 response.put("status", "error");
                 response.put("message", "Question is required");
@@ -61,13 +77,10 @@ public class MinimalController {
                 return ResponseEntity.badRequest().body(response);
             }
 
-            // ==============================
-            // PYTHON AI QUERY URL
-            // ==============================
             String pythonApiUrl =
                     PYTHON_BASE_URL + "/ai/query";
 
-            logger.info("4. Calling Python API: {}", pythonApiUrl);
+            logger.info("Calling Python API = {}", pythonApiUrl);
 
             try {
 
@@ -90,48 +103,36 @@ public class MinimalController {
                                 new ParameterizedTypeReference<Map<String, Object>>() {}
                         );
 
-                if (pythonResponse.getStatusCode().is2xxSuccessful()) {
-
-                    Map<String, Object> pythonData =
-                            pythonResponse.getBody();
-
-                    logger.info(
-                            "5. Python API response successful: {}",
-                            pythonData
-                    );
-
-                    return ResponseEntity.ok(pythonData);
-
-                } else {
-
-                    logger.error(
-                            "5. Python API error status: {}",
-                            pythonResponse.getStatusCode()
-                    );
-
-                    response.put("status", "error");
-
-                    response.put(
-                            "message",
-                            "Python service error: "
-                                    + pythonResponse.getStatusCode()
-                    );
-
-                    return ResponseEntity
-                            .status(HttpStatus.SERVICE_UNAVAILABLE)
-                            .body(response);
-                }
-
-            } catch (Exception e) {
-
-                logger.error(
-                        "5. Python API call failed: {}",
-                        e.getMessage()
+                logger.info(
+                        "Python API response status = {}",
+                        pythonResponse.getStatusCode()
                 );
 
-                // ==============================
-                // FALLBACK RESPONSE
-                // ==============================
+                if (pythonResponse.getStatusCode().is2xxSuccessful()
+                        && pythonResponse.getBody() != null) {
+
+                    return ResponseEntity.ok(
+                            pythonResponse.getBody()
+                    );
+                }
+
+                response.put("status", "error");
+                response.put(
+                        "message",
+                        "Python AI service returned invalid response"
+                );
+
+                return ResponseEntity
+                        .status(HttpStatus.SERVICE_UNAVAILABLE)
+                        .body(response);
+
+            } catch (RestClientException e) {
+
+                logger.error("Python AI unavailable: {}", e.getMessage());
+
+                // ==========================================
+                // SAFE FALLBACK RESPONSE
+                // ==========================================
                 response.put("status", "success");
 
                 response.put(
@@ -144,17 +145,15 @@ public class MinimalController {
                                 "insights",
                                 List.of(
                                         "Fallback mode active",
-                                        "Python service temporarily unavailable"
+                                        "Python AI temporarily unavailable"
                                 )
                         )
                 );
 
                 response.put(
                         "message",
-                        "Query processed successfully"
+                        "Fallback response returned successfully"
                 );
-
-                logger.info("6. Using fallback response");
 
                 return ResponseEntity.ok(response);
             }
@@ -162,8 +161,7 @@ public class MinimalController {
         } catch (Exception e) {
 
             logger.error(
-                    "7. Internal server error: {}",
-                    e.getMessage(),
+                    "Internal server error",
                     e
             );
 
@@ -171,7 +169,7 @@ public class MinimalController {
 
             response.put(
                     "message",
-                    "Internal server error: " + e.getMessage()
+                    "Internal server error occurred"
             );
 
             return ResponseEntity
@@ -180,13 +178,13 @@ public class MinimalController {
         }
     }
 
-    // ==============================
+    // ==========================================
     // DASHBOARD ENDPOINT
-    // ==============================
+    // ==========================================
     @GetMapping("/dashboard")
     public ResponseEntity<Map<String, Object>> getDashboardData() {
 
-        logger.info("=== SPRING BOOT DASHBOARD PROCESSING ===");
+        logger.info("=== DASHBOARD REQUEST ===");
 
         Map<String, Object> response = new HashMap<>();
 
@@ -195,10 +193,7 @@ public class MinimalController {
             String pythonApiUrl =
                     PYTHON_BASE_URL + "/ai/dashboard";
 
-            logger.info(
-                    "1. Calling Python dashboard API: {}",
-                    pythonApiUrl
-            );
+            logger.info("Calling dashboard API = {}", pythonApiUrl);
 
             try {
 
@@ -210,136 +205,95 @@ public class MinimalController {
                                 new ParameterizedTypeReference<Map<String, Object>>() {}
                         );
 
-                if (pythonResponse.getStatusCode().is2xxSuccessful()) {
+                if (pythonResponse.getStatusCode().is2xxSuccessful()
+                        && pythonResponse.getBody() != null) {
 
-                    Map<String, Object> dashboardData =
-                            pythonResponse.getBody();
-
-                    logger.info(
-                            "2. Python dashboard response successful: {}",
-                            dashboardData
-                    );
-
-                    return ResponseEntity.ok(dashboardData);
-
-                } else {
-
-                    logger.error(
-                            "2. Python dashboard error status: {}",
-                            pythonResponse.getStatusCode()
-                    );
-
-                    throw new RuntimeException(
-                            "Python dashboard service unavailable"
+                    return ResponseEntity.ok(
+                            pythonResponse.getBody()
                     );
                 }
 
             } catch (Exception e) {
 
                 logger.error(
-                        "2. Python dashboard API call failed: {}",
+                        "Dashboard API failed: {}",
                         e.getMessage()
-                );
-
-                // ==============================
-                // MOCK DASHBOARD DATA
-                // ==============================
-                Map<String, Object> mockData =
-                        new HashMap<>();
-
-                mockData.put(
-                        "monthlySales",
-                        List.of(
-                                Map.of(
-                                        "month",
-                                        "2024-01",
-                                        "revenue",
-                                        75000.0
-                                ),
-                                Map.of(
-                                        "month",
-                                        "2024-02",
-                                        "revenue",
-                                        82000.0
-                                )
-                        )
-                );
-
-                mockData.put(
-                        "regionSales",
-                        List.of(
-                                Map.of(
-                                        "region",
-                                        "North",
-                                        "revenue",
-                                        125000.0
-                                ),
-                                Map.of(
-                                        "region",
-                                        "South",
-                                        "revenue",
-                                        89000.0
-                                )
-                        )
-                );
-
-                mockData.put(
-                        "productSales",
-                        List.of(
-                                Map.of(
-                                        "product",
-                                        "Laptop",
-                                        "revenue",
-                                        185000.0
-                                ),
-                                Map.of(
-                                        "product",
-                                        "Phone",
-                                        "revenue",
-                                        125000.0
-                                )
-                        )
-                );
-
-                ApiResponseDto apiResponse =
-                        new ApiResponseDto(
-                                "success",
-                                "Dashboard data retrieved successfully",
-                                mockData
-                        );
-
-                logger.info("3. Using mock dashboard data");
-
-                return ResponseEntity.ok(
-                        Map.of(
-                                "status",
-                                apiResponse.getStatus(),
-
-                                "data",
-                                apiResponse.getData(),
-
-                                "message",
-                                apiResponse.getMessage(),
-
-                                "timestamp",
-                                apiResponse.getTimestamp()
-                        )
                 );
             }
 
+            // ==========================================
+            // MOCK DASHBOARD DATA
+            // ==========================================
+            Map<String, Object> mockData =
+                    new HashMap<>();
+
+            mockData.put(
+                    "monthlySales",
+                    List.of(
+                            Map.of(
+                                    "month", "2024-01",
+                                    "revenue", 75000
+                            ),
+                            Map.of(
+                                    "month", "2024-02",
+                                    "revenue", 82000
+                            )
+                    )
+            );
+
+            mockData.put(
+                    "regionSales",
+                    List.of(
+                            Map.of(
+                                    "region", "North",
+                                    "revenue", 125000
+                            ),
+                            Map.of(
+                                    "region", "South",
+                                    "revenue", 89000
+                            )
+                    )
+            );
+
+            mockData.put(
+                    "productSales",
+                    List.of(
+                            Map.of(
+                                    "product", "Laptop",
+                                    "revenue", 185000
+                            ),
+                            Map.of(
+                                    "product", "Phone",
+                                    "revenue", 125000
+                            )
+                    )
+            );
+
+            ApiResponseDto apiResponse =
+                    new ApiResponseDto(
+                            "success",
+                            "Dashboard mock data returned",
+                            mockData
+                    );
+
+            return ResponseEntity.ok(
+                    Map.of(
+                            "status", apiResponse.getStatus(),
+                            "data", apiResponse.getData(),
+                            "message", apiResponse.getMessage(),
+                            "timestamp", apiResponse.getTimestamp()
+                    )
+            );
+
         } catch (Exception e) {
 
-            logger.error(
-                    "3. Internal server error in dashboard: {}",
-                    e.getMessage(),
-                    e
-            );
+            logger.error("Dashboard error", e);
 
             response.put("status", "error");
 
             response.put(
                     "message",
-                    "Internal server error: " + e.getMessage()
+                    "Dashboard service failed"
             );
 
             return ResponseEntity
@@ -348,112 +302,59 @@ public class MinimalController {
         }
     }
 
-    // ==============================
+    // ==========================================
     // INSIGHTS ENDPOINT
-    // ==============================
+    // ==========================================
     @GetMapping("/insights")
     public ResponseEntity<Map<String, Object>> getInsights() {
 
         Map<String, Object> response =
                 new HashMap<>();
 
-        try {
+        response.put("status", "success");
 
-            Map<String, Object> insights =
-                    new HashMap<>();
+        response.put(
+                "data",
+                Map.of(
+                        "type", "sales_drop",
+                        "message", "Sales decreased by 15%",
+                        "value", -15
+                )
+        );
 
-            insights.put("type", "sales_drop");
+        response.put(
+                "message",
+                "Insights retrieved successfully"
+        );
 
-            insights.put(
-                    "message",
-                    "Sales decreased by 15% this week"
-            );
-
-            insights.put("value", -15.0);
-
-            response.put("status", "success");
-            response.put("data", insights);
-
-            response.put(
-                    "message",
-                    "Insights retrieved successfully"
-            );
-
-            return ResponseEntity.ok(response);
-
-        } catch (Exception e) {
-
-            response.put("status", "error");
-
-            response.put(
-                    "message",
-                    "Failed to retrieve insights: "
-                            + e.getMessage()
-            );
-
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(response);
-        }
+        return ResponseEntity.ok(response);
     }
 
-    // ==============================
+    // ==========================================
     // ALERTS ENDPOINT
-    // ==============================
+    // ==========================================
     @GetMapping("/alerts")
     public ResponseEntity<Map<String, Object>> getAlerts() {
 
         Map<String, Object> response =
                 new HashMap<>();
 
-        try {
+        response.put("status", "success");
 
-            Map<String, Object> alerts =
-                    new HashMap<>();
+        response.put(
+                "data",
+                Map.of(
+                        "title", "Low Inventory Alert",
+                        "message", "Laptop inventory running low",
+                        "priority", "medium"
+                )
+        );
 
-            alerts.put(
-                    "title",
-                    "Low Inventory Alert"
-            );
+        response.put(
+                "message",
+                "Alerts retrieved successfully"
+        );
 
-            alerts.put(
-                    "message",
-                    "Laptop inventory running low"
-            );
-
-            alerts.put(
-                    "priority",
-                    "medium"
-            );
-
-            alerts.put(
-                    "timestamp",
-                    "2024-01-23T15:45:00Z"
-            );
-
-            response.put("status", "success");
-            response.put("data", alerts);
-
-            response.put(
-                    "message",
-                    "Alerts retrieved successfully"
-            );
-
-            return ResponseEntity.ok(response);
-
-        } catch (Exception e) {
-
-            response.put("status", "error");
-
-            response.put(
-                    "message",
-                    "Failed to retrieve alerts: "
-                            + e.getMessage()
-            );
-
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(response);
-        }
+        return ResponseEntity.ok(response);
     }
 }
