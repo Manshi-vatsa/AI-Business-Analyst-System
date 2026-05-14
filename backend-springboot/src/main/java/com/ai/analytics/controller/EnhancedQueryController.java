@@ -25,7 +25,7 @@ public class EnhancedQueryController {
     private static final String FASTAPI_BASE_URL =
             System.getenv().getOrDefault(
                     "FASTAPI_URL",
-                    "http://localhost:8000"
+                    "https://ai-business-analyst-system.onrender.com"
             );
 
     private static final String FASTAPI_QUERY_ENDPOINT =
