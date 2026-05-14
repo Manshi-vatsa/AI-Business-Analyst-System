@@ -4013,3 +4013,4 @@ NameError: name 'pd' is not defined
 2026-04-26 19:15:38,707 - agents.analysis_agent - INFO - _get_enhanced_mock_data:302 - Using enhanced mock data for dashboard
 2026-04-26 19:15:38,709 - ai_analytics.main - INFO - get_dashboard_data:310 - Dashboard data generated: 8 months, 4 regions, 3 products
 2026-05-13 20:01:02,976 - ai_analytics.main - INFO - root:76 - Root endpoint accessed
+2026-05-14 13:22:45,196 - ai_analytics.main - INFO - health_check:95 - Health check accessed
