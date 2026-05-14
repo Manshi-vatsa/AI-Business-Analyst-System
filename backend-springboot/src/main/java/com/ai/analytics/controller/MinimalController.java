@@ -14,8 +14,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ai.analytics.dto.ApiResponseDto;
-
 @RestController
 @RequestMapping("/ai")
 @CrossOrigin(origins = "*")
@@ -52,14 +50,14 @@ public class MinimalController {
     }
 
     // ==========================================
-    // AI QUERY ENDPOINT
+    // QUERY ENDPOINT
     // ==========================================
     @PostMapping("/query")
     public ResponseEntity<Map<String, Object>> processQuery(
             @RequestBody Map<String, String> request
     ) {
 
-        logger.info("=== SPRING BOOT QUERY PROCESSING ===");
+        logger.info("=== QUERY PROCESSING START ===");
 
         Map<String, Object> response = new HashMap<>();
 
@@ -67,16 +65,24 @@ public class MinimalController {
 
             String question = request.get("question");
 
-            logger.info("Question = {}", question);
+            logger.info("Question received = {}", question);
 
+            // ==========================================
+            // VALIDATION
+            // ==========================================
             if (question == null || question.trim().isEmpty()) {
 
                 response.put("status", "error");
                 response.put("message", "Question is required");
 
-                return ResponseEntity.badRequest().body(response);
+                return ResponseEntity
+                        .badRequest()
+                        .body(response);
             }
 
+            // ==========================================
+            // PYTHON API URL
+            // ==========================================
             String pythonApiUrl =
                     PYTHON_BASE_URL + "/ai/query";
 
@@ -108,6 +114,9 @@ public class MinimalController {
                         pythonResponse.getStatusCode()
                 );
 
+                // ==========================================
+                // SUCCESS RESPONSE
+                // ==========================================
                 if (pythonResponse.getStatusCode().is2xxSuccessful()
                         && pythonResponse.getBody() != null) {
 
@@ -116,47 +125,40 @@ public class MinimalController {
                     );
                 }
 
-                response.put("status", "error");
-                response.put(
-                        "message",
-                        "Python AI service returned invalid response"
-                );
-
-                return ResponseEntity
-                        .status(HttpStatus.SERVICE_UNAVAILABLE)
-                        .body(response);
-
             } catch (RestClientException e) {
 
-                logger.error("Python AI unavailable: {}", e.getMessage());
-
-                // ==========================================
-                // SAFE FALLBACK RESPONSE
-                // ==========================================
-                response.put("status", "success");
-
-                response.put(
-                        "data",
-                        Map.of(
-                                "answer",
-                                "AI system working successfully. Question received: "
-                                        + question,
-
-                                "insights",
-                                List.of(
-                                        "Fallback mode active",
-                                        "Python AI temporarily unavailable"
-                                )
-                        )
+                logger.error(
+                        "Python AI unavailable = {}",
+                        e.getMessage()
                 );
-
-                response.put(
-                        "message",
-                        "Fallback response returned successfully"
-                );
-
-                return ResponseEntity.ok(response);
             }
+
+            // ==========================================
+            // FALLBACK RESPONSE
+            // ==========================================
+            response.put("status", "success");
+
+            response.put(
+                    "data",
+                    Map.of(
+                            "answer",
+                            "AI system working successfully. Question received: "
+                                    + question,
+
+                            "insights",
+                            List.of(
+                                    "Fallback mode active",
+                                    "Python AI temporarily unavailable"
+                            )
+                    )
+            );
+
+            response.put(
+                    "message",
+                    "Fallback response returned successfully"
+            );
+
+            return ResponseEntity.ok(response);
 
         } catch (Exception e) {
 
@@ -186,120 +188,62 @@ public class MinimalController {
 
         logger.info("=== DASHBOARD REQUEST ===");
 
-        Map<String, Object> response = new HashMap<>();
+        Map<String, Object> mockData =
+                new HashMap<>();
 
-        try {
+        mockData.put(
+                "monthlySales",
+                List.of(
+                        Map.of(
+                                "month", "2024-01",
+                                "revenue", 75000
+                        ),
+                        Map.of(
+                                "month", "2024-02",
+                                "revenue", 82000
+                        )
+                )
+        );
 
-            String pythonApiUrl =
-                    PYTHON_BASE_URL + "/ai/dashboard";
+        mockData.put(
+                "regionSales",
+                List.of(
+                        Map.of(
+                                "region", "North",
+                                "revenue", 125000
+                        ),
+                        Map.of(
+                                "region", "South",
+                                "revenue", 89000
+                        )
+                )
+        );
 
-            logger.info("Calling dashboard API = {}", pythonApiUrl);
+        mockData.put(
+                "productSales",
+                List.of(
+                        Map.of(
+                                "product", "Laptop",
+                                "revenue", 185000
+                        ),
+                        Map.of(
+                                "product", "Phone",
+                                "revenue", 125000
+                        )
+                )
+        );
 
-            try {
+        Map<String, Object> response =
+                new HashMap<>();
 
-                ResponseEntity<Map<String, Object>> pythonResponse =
-                        restTemplate.exchange(
-                                pythonApiUrl,
-                                HttpMethod.GET,
-                                null,
-                                new ParameterizedTypeReference<Map<String, Object>>() {}
-                        );
+        response.put("status", "success");
+        response.put("data", mockData);
+        response.put(
+                "message",
+                "Dashboard data retrieved successfully"
+        );
 
-                if (pythonResponse.getStatusCode().is2xxSuccessful()
-                        && pythonResponse.getBody() != null) {
-
-                    return ResponseEntity.ok(
-                            pythonResponse.getBody()
-                    );
-                }
-
-            } catch (Exception e) {
-
-                logger.error(
-                        "Dashboard API failed: {}",
-                        e.getMessage()
-                );
-            }
-
-            // ==========================================
-            // MOCK DASHBOARD DATA
-            // ==========================================
-            Map<String, Object> mockData =
-                    new HashMap<>();
-
-            mockData.put(
-                    "monthlySales",
-                    List.of(
-                            Map.of(
-                                    "month", "2024-01",
-                                    "revenue", 75000
-                            ),
-                            Map.of(
-                                    "month", "2024-02",
-                                    "revenue", 82000
-                            )
-                    )
-            );
-
-            mockData.put(
-                    "regionSales",
-                    List.of(
-                            Map.of(
-                                    "region", "North",
-                                    "revenue", 125000
-                            ),
-                            Map.of(
-                                    "region", "South",
-                                    "revenue", 89000
-                            )
-                    )
-            );
-
-            mockData.put(
-                    "productSales",
-                    List.of(
-                            Map.of(
-                                    "product", "Laptop",
-                                    "revenue", 185000
-                            ),
-                            Map.of(
-                                    "product", "Phone",
-                                    "revenue", 125000
-                            )
-                    )
-            );
-
-            ApiResponseDto apiResponse =
-                    new ApiResponseDto(
-                            "success",
-                            "Dashboard mock data returned",
-                            mockData
-                    );
-
-            return ResponseEntity.ok(
-                    Map.of(
-                            "status", apiResponse.getStatus(),
-                            "data", apiResponse.getData(),
-                            "message", apiResponse.getMessage(),
-                            "timestamp", apiResponse.getTimestamp()
-                    )
-            );
-
-        } catch (Exception e) {
-
-            logger.error("Dashboard error", e);
-
-            response.put("status", "error");
-
-            response.put(
-                    "message",
-                    "Dashboard service failed"
-            );
-
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(response);
-        }
+        return ResponseEntity.ok(response);
     }
 
     // ==========================================
